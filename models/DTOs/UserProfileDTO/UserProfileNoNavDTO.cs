@@ -2,10 +2,10 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 
-namespace MikesMoves.Models
+namespace MikesMoves.Models.DTOs
 
 {
-    public class UserProfile
+    public class UserProfileNoNavDTO
     {
         public int Id { get; set; }
         [Required]

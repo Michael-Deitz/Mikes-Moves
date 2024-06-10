@@ -10,4 +10,5 @@ public class Trailer
         public decimal BasePrice { get; set; }
         public ICollection<Item> Items { get; set; }
         public ICollection<Reservation> Reservations { get; set; }
+        public string ImageUrl { get; set; }
     }

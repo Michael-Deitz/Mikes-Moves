@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MikesMoves.Migrations
 {
     [DbContext(typeof(MikesMovesDbContext))]
-    [Migration("20240610051337_InitialCreate")]
+    [Migration("20240610183030_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -152,13 +152,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "54d4db9e-e448-4380-8d04-20037ea55d17",
+                            ConcurrencyStamp = "f96bb560-8261-4638-8210-72ee9f11048b",
                             Email = "admina@strator.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEOWARJD6b+SVs8WAD86/5m1XlQfXjmow5A6HPtEGDaREGyTcV5PsKVkHxeaVjJG+Sg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAXDqJYeWkBz7WvWYr96Wovl5npuMkL+1BP1/1nOD8Ho56aTeDpk12qKKcK8qr3lPw==",
+                            PhoneNumber = "4445556666",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "06057edc-c4e9-4188-9aca-c14b6e40bc56",
+                            SecurityStamp = "a5a54860-733e-4f33-94fb-eae27a76bf7d",
                             TwoFactorEnabled = false,
                             UserName = "Administrator"
                         },
@@ -166,13 +167,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "d8d76512-74f1-43bb-b1fd-87d3a8aa36df",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "31826b5d-adfb-4e70-a995-0757600674de",
+                            ConcurrencyStamp = "beeab7e3-8f19-4165-bd0f-1103c90de93a",
                             Email = "john@doe.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEImstRE7H8yhsQDYF1a2b2DYOwpg/rnpuMdxiRa29E/Duj0i6lTUgd63ZSpHB31Ccw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDitu7vk9G8wyLTSU1/7ruZAusFxJvkibOGnR1yFAY7//SYjep+j528baB8vr8xEzg==",
+                            PhoneNumber = "3334445555",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "08d51169-e522-4d41-a5d8-aaf3f16f3325",
+                            SecurityStamp = "198a2afc-2536-41a0-99db-919e5f9620fc",
                             TwoFactorEnabled = false,
                             UserName = "JohnDoe"
                         },
@@ -180,13 +182,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "a7d21fac-3b21-454a-a747-075f072d0cf3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "979918bc-c2d2-4913-92a7-edd154164f80",
+                            ConcurrencyStamp = "7677a47f-750d-440f-8913-982fff8eb236",
                             Email = "jane@smith.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEPP4wpPZ1Eb9J46e+j9R5xXhu4UCnAdNQyxDUWcFLSAezUSMRhCe+HYmMTyAPTdBEQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKbjnTZS48XEBJOYyBmIvPWHtYIe7ABPuUzZU+kd3K6j+M+cJ+CNvxZKVr0L/6ruHw==",
+                            PhoneNumber = "2223334444",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "59617172-7365-4142-b9a0-09c8bd870073",
+                            SecurityStamp = "7f9aa146-11a0-43be-b26f-51f70fd78022",
                             TwoFactorEnabled = false,
                             UserName = "JaneSmith"
                         },
@@ -194,13 +197,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "c806cfae-bda9-47c5-8473-dd52fd056a9b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "debd5982-f9b5-4bff-95c2-cd6fa4184fc0",
+                            ConcurrencyStamp = "dec3ae89-a0fb-44cc-9443-844d9152859e",
                             Email = "alice@johnson.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAECHUBAQ+VvWdRSdsIw+VIxYWq9mdAyeACCACaP7bfjbejAypzV2WDresrOmOEizssQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEP1oRzbSmmconPY25LB2nVG59HMBfppTQw8v22EulFdAjrAwiFliK+XbfIrmpAU9Q==",
+                            PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b7711e7a-64ff-4571-977a-57f487b9d15e",
+                            SecurityStamp = "2017ac52-9d1c-4578-86f2-48b1923a3809",
                             TwoFactorEnabled = false,
                             UserName = "AliceJohnson"
                         },
@@ -208,13 +212,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "9ce89d88-75da-4a80-9b0d-3fe58582b8e2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c0bba2a3-d5a5-484b-ab9a-81f207a47316",
+                            ConcurrencyStamp = "741b4c6a-9fdf-4731-9dea-b4c8dc41ec29",
                             Email = "bob@williams.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEGDb6IaYP7A5zgB/ciPe097JWOyF1oNmTjV1COjrTIWhyeYYIpB0i9cRaKFVks+CDQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBRjeBHxlMFWlqT3KE3imtYNGBEyRMIAgmpYZCiAjJXDmoEHsgceABwW33DANwVBwA==",
+                            PhoneNumber = "0987654321",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "26c95b2d-9b73-4479-a71d-9e8d4f8549bf",
+                            SecurityStamp = "bd62f974-f112-4cd2-ac8d-b29d5b184785",
                             TwoFactorEnabled = false,
                             UserName = "BobWilliams"
                         },
@@ -222,13 +227,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "d224a03d-bf0c-4a05-b728-e3521e45d74d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "36087963-3ced-4e9f-a2ee-719b201a3d38",
+                            ConcurrencyStamp = "f56c68d2-09c6-4207-aa65-272a413bcfd9",
                             Email = "Eve@Davis.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEGW6kIBfZ1rZxHRZE8xz5Wsdq0HTmoh0cDBOmwfYjTnFMiKKGvou8sAiN67umvA+nw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIDK27kVlUYbWohOBGBSdV3VM1jUEHrfT/6yfe3u3/Khm2jBeceRgRYCHcV+pZ5+rw==",
+                            PhoneNumber = "1112223333",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e46884b7-72c0-4bc1-ae5a-238fa0b95ff4",
+                            SecurityStamp = "eb44a6cc-2a45-4478-b573-145c7566908f",
                             TwoFactorEnabled = false,
                             UserName = "EveDavis"
                         });
@@ -294,18 +300,6 @@ namespace MikesMoves.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f",
-                            RoleId = "c3aaeb97-d2ba-4a53-a521-4eea61e59b35"
-                        },
-                        new
-                        {
-                            UserId = "d8d76512-74f1-43bb-b1fd-87d3a8aa36df",
-                            RoleId = "c3aaeb97-d2ba-4a53-a521-4eea61e59b35"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -339,6 +333,10 @@ namespace MikesMoves.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
@@ -357,6 +355,7 @@ namespace MikesMoves.Migrations
                         {
                             Id = 1,
                             Description = "Description 1",
+                            ImageUrl = "https://example.com/images/item1.jpg",
                             Name = "Item 1",
                             TrailerId = 1
                         },
@@ -364,6 +363,7 @@ namespace MikesMoves.Migrations
                         {
                             Id = 2,
                             Description = "Description 2",
+                            ImageUrl = "https://example.com/images/item2.jpg",
                             Name = "Item 2",
                             TrailerId = 2
                         },
@@ -371,6 +371,7 @@ namespace MikesMoves.Migrations
                         {
                             Id = 3,
                             Description = "Description 3",
+                            ImageUrl = "https://example.com/images/item3.jpg",
                             Name = "Item 3",
                             TrailerId = 3
                         });
@@ -410,7 +411,7 @@ namespace MikesMoves.Migrations
                         {
                             Id = 1,
                             Content = "Message 1",
-                            DateCreated = new DateTime(2024, 6, 9, 0, 13, 36, 752, DateTimeKind.Local).AddTicks(9136),
+                            DateCreated = new DateTime(2024, 6, 9, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9195),
                             ReceiverId = 2,
                             SenderId = 1
                         },
@@ -418,7 +419,7 @@ namespace MikesMoves.Migrations
                         {
                             Id = 2,
                             Content = "Message 2",
-                            DateCreated = new DateTime(2024, 6, 9, 0, 13, 36, 752, DateTimeKind.Local).AddTicks(9212),
+                            DateCreated = new DateTime(2024, 6, 9, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9253),
                             ReceiverId = 3,
                             SenderId = 2
                         },
@@ -426,7 +427,7 @@ namespace MikesMoves.Migrations
                         {
                             Id = 3,
                             Content = "Message 3",
-                            DateCreated = new DateTime(2024, 6, 9, 0, 13, 36, 752, DateTimeKind.Local).AddTicks(9215),
+                            DateCreated = new DateTime(2024, 6, 9, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9257),
                             ReceiverId = 1,
                             SenderId = 3
                         });
@@ -454,19 +455,19 @@ namespace MikesMoves.Migrations
                         {
                             UserId = 1,
                             TrailerId = 1,
-                            DateReserved = new DateTime(2024, 6, 9, 0, 13, 36, 752, DateTimeKind.Local).AddTicks(9270)
+                            DateReserved = new DateTime(2024, 6, 9, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9333)
                         },
                         new
                         {
                             UserId = 2,
                             TrailerId = 2,
-                            DateReserved = new DateTime(2024, 6, 8, 0, 13, 36, 752, DateTimeKind.Local).AddTicks(9274)
+                            DateReserved = new DateTime(2024, 6, 8, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9337)
                         },
                         new
                         {
                             UserId = 3,
                             TrailerId = 3,
-                            DateReserved = new DateTime(2024, 6, 7, 0, 13, 36, 752, DateTimeKind.Local).AddTicks(9284)
+                            DateReserved = new DateTime(2024, 6, 7, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9350)
                         });
                 });
 
@@ -486,6 +487,10 @@ namespace MikesMoves.Migrations
 
                     b.Property<int>("Height")
                         .HasColumnType("integer");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int>("Length")
                         .HasColumnType("integer");
@@ -508,6 +513,7 @@ namespace MikesMoves.Migrations
                             BasePrice = 50m,
                             Capacity = 1000,
                             Height = 10,
+                            ImageUrl = "https://example.com/images/trailer1.jpg",
                             Length = 20,
                             Location = "Location A",
                             Width = 5
@@ -518,6 +524,7 @@ namespace MikesMoves.Migrations
                             BasePrice = 60m,
                             Capacity = 1200,
                             Height = 12,
+                            ImageUrl = "https://example.com/images/trailer2.jpg",
                             Length = 25,
                             Location = "Location B",
                             Width = 6
@@ -528,13 +535,14 @@ namespace MikesMoves.Migrations
                             BasePrice = 40m,
                             Capacity = 800,
                             Height = 8,
+                            ImageUrl = "https://example.com/images/trailer3.jpg",
                             Length = 15,
                             Location = "Location C",
                             Width = 4
                         });
                 });
 
-            modelBuilder.Entity("MikesMoves.Models.User", b =>
+            modelBuilder.Entity("MikesMoves.Models.UserProfile", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -547,25 +555,28 @@ namespace MikesMoves.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("IdentityUserId")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<string>("ImageLocation")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("IdentityUserId");
 
-                    b.ToTable("Users");
+                    b.ToTable("UserProfiles");
 
                     b.HasData(
                         new
@@ -574,8 +585,8 @@ namespace MikesMoves.Migrations
                             DateCreated = new DateTime(2022, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Admina",
                             IdentityUserId = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f",
-                            LastName = "Strator",
-                            PhoneNumber = "123-456-7890"
+                            ImageLocation = "https://robohash.org/numquamutut.png?size=150x150&set=set1",
+                            LastName = "Strator"
                         },
                         new
                         {
@@ -583,8 +594,8 @@ namespace MikesMoves.Migrations
                             DateCreated = new DateTime(2023, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "John",
                             IdentityUserId = "d8d76512-74f1-43bb-b1fd-87d3a8aa36df",
-                            LastName = "Doe",
-                            PhoneNumber = "123-456-7890"
+                            ImageLocation = "https://robohash.org/nisiautemet.png?size=150x150&set=set1",
+                            LastName = "Doe"
                         },
                         new
                         {
@@ -592,8 +603,8 @@ namespace MikesMoves.Migrations
                             DateCreated = new DateTime(2022, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Jane",
                             IdentityUserId = "a7d21fac-3b21-454a-a747-075f072d0cf3",
-                            LastName = "Smith",
-                            PhoneNumber = "123-456-7890"
+                            ImageLocation = "https://robohash.org/molestiaemagnamet.png?size=150x150&set=set1",
+                            LastName = "Smith"
                         },
                         new
                         {
@@ -601,8 +612,8 @@ namespace MikesMoves.Migrations
                             DateCreated = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Alice",
                             IdentityUserId = "c806cfae-bda9-47c5-8473-dd52fd056a9b",
-                            LastName = "Johnson",
-                            PhoneNumber = "123-456-7890"
+                            ImageLocation = "https://robohash.org/deseruntutipsum.png?size=150x150&set=set1",
+                            LastName = "Johnson"
                         },
                         new
                         {
@@ -610,8 +621,8 @@ namespace MikesMoves.Migrations
                             DateCreated = new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Bob",
                             IdentityUserId = "9ce89d88-75da-4a80-9b0d-3fe58582b8e2",
-                            LastName = "Williams",
-                            PhoneNumber = "123-456-7890"
+                            ImageLocation = "https://robohash.org/quiundedignissimos.png?size=150x150&set=set1",
+                            LastName = "Williams"
                         },
                         new
                         {
@@ -619,8 +630,8 @@ namespace MikesMoves.Migrations
                             DateCreated = new DateTime(2022, 10, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Eve",
                             IdentityUserId = "d224a03d-bf0c-4a05-b728-e3521e45d74d",
-                            LastName = "Davis",
-                            PhoneNumber = "123-456-7890"
+                            ImageLocation = "https://robohash.org/hicnihilipsa.png?size=150x150&set=set1",
+                            LastName = "Davis"
                         });
                 });
 
@@ -688,13 +699,13 @@ namespace MikesMoves.Migrations
 
             modelBuilder.Entity("MikesMoves.Models.Message", b =>
                 {
-                    b.HasOne("MikesMoves.Models.User", "Receiver")
+                    b.HasOne("MikesMoves.Models.UserProfile", "Receiver")
                         .WithMany("ReceivedMessages")
                         .HasForeignKey("ReceiverId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("MikesMoves.Models.User", "Sender")
+                    b.HasOne("MikesMoves.Models.UserProfile", "Sender")
                         .WithMany("SentMessages")
                         .HasForeignKey("SenderId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -713,7 +724,7 @@ namespace MikesMoves.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MikesMoves.Models.User", "User")
+                    b.HasOne("MikesMoves.Models.UserProfile", "UserProfile")
                         .WithMany("Reservations")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -721,10 +732,10 @@ namespace MikesMoves.Migrations
 
                     b.Navigation("Trailer");
 
-                    b.Navigation("User");
+                    b.Navigation("UserProfile");
                 });
 
-            modelBuilder.Entity("MikesMoves.Models.User", b =>
+            modelBuilder.Entity("MikesMoves.Models.UserProfile", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "IdentityUser")
                         .WithMany()
@@ -742,7 +753,7 @@ namespace MikesMoves.Migrations
                     b.Navigation("Reservations");
                 });
 
-            modelBuilder.Entity("MikesMoves.Models.User", b =>
+            modelBuilder.Entity("MikesMoves.Models.UserProfile", b =>
                 {
                     b.Navigation("ReceivedMessages");
 

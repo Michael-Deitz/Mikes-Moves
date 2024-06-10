@@ -64,7 +64,8 @@ namespace MikesMoves.Migrations
                     Length = table.Column<int>(type: "integer", nullable: false),
                     Capacity = table.Column<int>(type: "integer", nullable: false),
                     Location = table.Column<string>(type: "text", nullable: false),
-                    BasePrice = table.Column<decimal>(type: "numeric", nullable: false)
+                    BasePrice = table.Column<decimal>(type: "numeric", nullable: false),
+                    ImageUrl = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -178,22 +179,22 @@ namespace MikesMoves.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "UserProfiles",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    FirstName = table.Column<string>(type: "text", nullable: false),
-                    LastName = table.Column<string>(type: "text", nullable: false),
-                    PhoneNumber = table.Column<string>(type: "text", nullable: false),
+                    FirstName = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    LastName = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    ImageLocation = table.Column<string>(type: "text", nullable: false),
                     DateCreated = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
-                    IdentityUserId = table.Column<string>(type: "text", nullable: false)
+                    IdentityUserId = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_UserProfiles", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Users_AspNetUsers_IdentityUserId",
+                        name: "FK_UserProfiles_AspNetUsers_IdentityUserId",
                         column: x => x.IdentityUserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
@@ -208,7 +209,8 @@ namespace MikesMoves.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     TrailerId = table.Column<int>(type: "integer", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
-                    Description = table.Column<string>(type: "text", nullable: false)
+                    Description = table.Column<string>(type: "text", nullable: false),
+                    ImageUrl = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -236,15 +238,15 @@ namespace MikesMoves.Migrations
                 {
                     table.PrimaryKey("PK_Messages", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Messages_Users_ReceiverId",
+                        name: "FK_Messages_UserProfiles_ReceiverId",
                         column: x => x.ReceiverId,
-                        principalTable: "Users",
+                        principalTable: "UserProfiles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Messages_Users_SenderId",
+                        name: "FK_Messages_UserProfiles_SenderId",
                         column: x => x.SenderId,
-                        principalTable: "Users",
+                        principalTable: "UserProfiles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -267,9 +269,9 @@ namespace MikesMoves.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Reservations_Users_UserId",
+                        name: "FK_Reservations_UserProfiles_UserId",
                         column: x => x.UserId,
-                        principalTable: "Users",
+                        principalTable: "UserProfiles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -284,54 +286,45 @@ namespace MikesMoves.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "9ce89d88-75da-4a80-9b0d-3fe58582b8e2", 0, "c0bba2a3-d5a5-484b-ab9a-81f207a47316", "bob@williams.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEGDb6IaYP7A5zgB/ciPe097JWOyF1oNmTjV1COjrTIWhyeYYIpB0i9cRaKFVks+CDQ==", null, false, "26c95b2d-9b73-4479-a71d-9e8d4f8549bf", false, "BobWilliams" },
-                    { "a7d21fac-3b21-454a-a747-075f072d0cf3", 0, "979918bc-c2d2-4913-92a7-edd154164f80", "jane@smith.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEPP4wpPZ1Eb9J46e+j9R5xXhu4UCnAdNQyxDUWcFLSAezUSMRhCe+HYmMTyAPTdBEQ==", null, false, "59617172-7365-4142-b9a0-09c8bd870073", false, "JaneSmith" },
-                    { "c806cfae-bda9-47c5-8473-dd52fd056a9b", 0, "debd5982-f9b5-4bff-95c2-cd6fa4184fc0", "alice@johnson.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAECHUBAQ+VvWdRSdsIw+VIxYWq9mdAyeACCACaP7bfjbejAypzV2WDresrOmOEizssQ==", null, false, "b7711e7a-64ff-4571-977a-57f487b9d15e", false, "AliceJohnson" },
-                    { "d224a03d-bf0c-4a05-b728-e3521e45d74d", 0, "36087963-3ced-4e9f-a2ee-719b201a3d38", "Eve@Davis.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEGW6kIBfZ1rZxHRZE8xz5Wsdq0HTmoh0cDBOmwfYjTnFMiKKGvou8sAiN67umvA+nw==", null, false, "e46884b7-72c0-4bc1-ae5a-238fa0b95ff4", false, "EveDavis" },
-                    { "d8d76512-74f1-43bb-b1fd-87d3a8aa36df", 0, "31826b5d-adfb-4e70-a995-0757600674de", "john@doe.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEImstRE7H8yhsQDYF1a2b2DYOwpg/rnpuMdxiRa29E/Duj0i6lTUgd63ZSpHB31Ccw==", null, false, "08d51169-e522-4d41-a5d8-aaf3f16f3325", false, "JohnDoe" },
-                    { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "54d4db9e-e448-4380-8d04-20037ea55d17", "admina@strator.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEOWARJD6b+SVs8WAD86/5m1XlQfXjmow5A6HPtEGDaREGyTcV5PsKVkHxeaVjJG+Sg==", null, false, "06057edc-c4e9-4188-9aca-c14b6e40bc56", false, "Administrator" }
+                    { "9ce89d88-75da-4a80-9b0d-3fe58582b8e2", 0, "741b4c6a-9fdf-4731-9dea-b4c8dc41ec29", "bob@williams.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEBRjeBHxlMFWlqT3KE3imtYNGBEyRMIAgmpYZCiAjJXDmoEHsgceABwW33DANwVBwA==", "0987654321", false, "bd62f974-f112-4cd2-ac8d-b29d5b184785", false, "BobWilliams" },
+                    { "a7d21fac-3b21-454a-a747-075f072d0cf3", 0, "7677a47f-750d-440f-8913-982fff8eb236", "jane@smith.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEKbjnTZS48XEBJOYyBmIvPWHtYIe7ABPuUzZU+kd3K6j+M+cJ+CNvxZKVr0L/6ruHw==", "2223334444", false, "7f9aa146-11a0-43be-b26f-51f70fd78022", false, "JaneSmith" },
+                    { "c806cfae-bda9-47c5-8473-dd52fd056a9b", 0, "dec3ae89-a0fb-44cc-9443-844d9152859e", "alice@johnson.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEEP1oRzbSmmconPY25LB2nVG59HMBfppTQw8v22EulFdAjrAwiFliK+XbfIrmpAU9Q==", "1234567890", false, "2017ac52-9d1c-4578-86f2-48b1923a3809", false, "AliceJohnson" },
+                    { "d224a03d-bf0c-4a05-b728-e3521e45d74d", 0, "f56c68d2-09c6-4207-aa65-272a413bcfd9", "Eve@Davis.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEIDK27kVlUYbWohOBGBSdV3VM1jUEHrfT/6yfe3u3/Khm2jBeceRgRYCHcV+pZ5+rw==", "1112223333", false, "eb44a6cc-2a45-4478-b573-145c7566908f", false, "EveDavis" },
+                    { "d8d76512-74f1-43bb-b1fd-87d3a8aa36df", 0, "beeab7e3-8f19-4165-bd0f-1103c90de93a", "john@doe.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEDitu7vk9G8wyLTSU1/7ruZAusFxJvkibOGnR1yFAY7//SYjep+j528baB8vr8xEzg==", "3334445555", false, "198a2afc-2536-41a0-99db-919e5f9620fc", false, "JohnDoe" },
+                    { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "f96bb560-8261-4638-8210-72ee9f11048b", "admina@strator.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEAXDqJYeWkBz7WvWYr96Wovl5npuMkL+1BP1/1nOD8Ho56aTeDpk12qKKcK8qr3lPw==", "4445556666", false, "a5a54860-733e-4f33-94fb-eae27a76bf7d", false, "Administrator" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Trailers",
-                columns: new[] { "Id", "BasePrice", "Capacity", "Height", "Length", "Location", "Width" },
+                columns: new[] { "Id", "BasePrice", "Capacity", "Height", "ImageUrl", "Length", "Location", "Width" },
                 values: new object[,]
                 {
-                    { 1, 50m, 1000, 10, 20, "Location A", 5 },
-                    { 2, 60m, 1200, 12, 25, "Location B", 6 },
-                    { 3, 40m, 800, 8, 15, "Location C", 4 }
-                });
-
-            migrationBuilder.InsertData(
-                table: "AspNetUserRoles",
-                columns: new[] { "RoleId", "UserId" },
-                values: new object[,]
-                {
-                    { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "d8d76512-74f1-43bb-b1fd-87d3a8aa36df" },
-                    { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f" }
+                    { 1, 50m, 1000, 10, "https://example.com/images/trailer1.jpg", 20, "Location A", 5 },
+                    { 2, 60m, 1200, 12, "https://example.com/images/trailer2.jpg", 25, "Location B", 6 },
+                    { 3, 40m, 800, 8, "https://example.com/images/trailer3.jpg", 15, "Location C", 4 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Items",
-                columns: new[] { "Id", "Description", "Name", "TrailerId" },
+                columns: new[] { "Id", "Description", "ImageUrl", "Name", "TrailerId" },
                 values: new object[,]
                 {
-                    { 1, "Description 1", "Item 1", 1 },
-                    { 2, "Description 2", "Item 2", 2 },
-                    { 3, "Description 3", "Item 3", 3 }
+                    { 1, "Description 1", "https://example.com/images/item1.jpg", "Item 1", 1 },
+                    { 2, "Description 2", "https://example.com/images/item2.jpg", "Item 2", 2 },
+                    { 3, "Description 3", "https://example.com/images/item3.jpg", "Item 3", 3 }
                 });
 
             migrationBuilder.InsertData(
-                table: "Users",
-                columns: new[] { "Id", "DateCreated", "FirstName", "IdentityUserId", "LastName", "PhoneNumber" },
+                table: "UserProfiles",
+                columns: new[] { "Id", "DateCreated", "FirstName", "IdentityUserId", "ImageLocation", "LastName" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2022, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "Admina", "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", "Strator", "123-456-7890" },
-                    { 2, new DateTime(2023, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "John", "d8d76512-74f1-43bb-b1fd-87d3a8aa36df", "Doe", "123-456-7890" },
-                    { 3, new DateTime(2022, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "Jane", "a7d21fac-3b21-454a-a747-075f072d0cf3", "Smith", "123-456-7890" },
-                    { 4, new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Alice", "c806cfae-bda9-47c5-8473-dd52fd056a9b", "Johnson", "123-456-7890" },
-                    { 5, new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "Bob", "9ce89d88-75da-4a80-9b0d-3fe58582b8e2", "Williams", "123-456-7890" },
-                    { 6, new DateTime(2022, 10, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), "Eve", "d224a03d-bf0c-4a05-b728-e3521e45d74d", "Davis", "123-456-7890" }
+                    { 1, new DateTime(2022, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), "Admina", "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", "https://robohash.org/numquamutut.png?size=150x150&set=set1", "Strator" },
+                    { 2, new DateTime(2023, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "John", "d8d76512-74f1-43bb-b1fd-87d3a8aa36df", "https://robohash.org/nisiautemet.png?size=150x150&set=set1", "Doe" },
+                    { 3, new DateTime(2022, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "Jane", "a7d21fac-3b21-454a-a747-075f072d0cf3", "https://robohash.org/molestiaemagnamet.png?size=150x150&set=set1", "Smith" },
+                    { 4, new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Alice", "c806cfae-bda9-47c5-8473-dd52fd056a9b", "https://robohash.org/deseruntutipsum.png?size=150x150&set=set1", "Johnson" },
+                    { 5, new DateTime(2023, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "Bob", "9ce89d88-75da-4a80-9b0d-3fe58582b8e2", "https://robohash.org/quiundedignissimos.png?size=150x150&set=set1", "Williams" },
+                    { 6, new DateTime(2022, 10, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), "Eve", "d224a03d-bf0c-4a05-b728-e3521e45d74d", "https://robohash.org/hicnihilipsa.png?size=150x150&set=set1", "Davis" }
                 });
 
             migrationBuilder.InsertData(
@@ -339,9 +332,9 @@ namespace MikesMoves.Migrations
                 columns: new[] { "Id", "Content", "DateCreated", "ReceiverId", "SenderId" },
                 values: new object[,]
                 {
-                    { 1, "Message 1", new DateTime(2024, 6, 9, 0, 13, 36, 752, DateTimeKind.Local).AddTicks(9136), 2, 1 },
-                    { 2, "Message 2", new DateTime(2024, 6, 9, 0, 13, 36, 752, DateTimeKind.Local).AddTicks(9212), 3, 2 },
-                    { 3, "Message 3", new DateTime(2024, 6, 9, 0, 13, 36, 752, DateTimeKind.Local).AddTicks(9215), 1, 3 }
+                    { 1, "Message 1", new DateTime(2024, 6, 9, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9195), 2, 1 },
+                    { 2, "Message 2", new DateTime(2024, 6, 9, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9253), 3, 2 },
+                    { 3, "Message 3", new DateTime(2024, 6, 9, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9257), 1, 3 }
                 });
 
             migrationBuilder.InsertData(
@@ -349,9 +342,9 @@ namespace MikesMoves.Migrations
                 columns: new[] { "TrailerId", "UserId", "DateReserved" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2024, 6, 9, 0, 13, 36, 752, DateTimeKind.Local).AddTicks(9270) },
-                    { 2, 2, new DateTime(2024, 6, 8, 0, 13, 36, 752, DateTimeKind.Local).AddTicks(9274) },
-                    { 3, 3, new DateTime(2024, 6, 7, 0, 13, 36, 752, DateTimeKind.Local).AddTicks(9284) }
+                    { 1, 1, new DateTime(2024, 6, 9, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9333) },
+                    { 2, 2, new DateTime(2024, 6, 8, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9337) },
+                    { 3, 3, new DateTime(2024, 6, 7, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9350) }
                 });
 
             migrationBuilder.CreateIndex(
@@ -412,8 +405,8 @@ namespace MikesMoves.Migrations
                 column: "TrailerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_IdentityUserId",
-                table: "Users",
+                name: "IX_UserProfiles_IdentityUserId",
+                table: "UserProfiles",
                 column: "IdentityUserId");
         }
 
@@ -451,7 +444,7 @@ namespace MikesMoves.Migrations
                 name: "Trailers");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "UserProfiles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

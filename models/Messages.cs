@@ -7,8 +7,8 @@ namespace MikesMoves.Models
         public int ReceiverId { get; set; }
         public string Content { get; set; }
         public DateTime DateCreated { get; set; }
-        public User Sender { get; set; }
-        public User Receiver { get; set; }
+        public UserProfile Sender { get; set; }
+        public UserProfile Receiver { get; set; }
     }
 
 }
