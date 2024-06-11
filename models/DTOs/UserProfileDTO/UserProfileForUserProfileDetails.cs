@@ -26,10 +26,12 @@ public class UserProfileForUserProfileDetailsDTO
     [DataType(DataType.Url)]
     [MaxLength(255)]
     public string ImageLocation { get; set; }
-    public byte[] ImageBlob { get; set; }
+    public byte[]? ImageBlob { get; set; }
 
     [NotMapped]
     public List<string> Roles { get; set; }
+    [NotMapped]
+    public string PhoneNumber { get; set; }
 
     public string IdentityUserId { get; set; }
 
@@ -42,7 +44,5 @@ public class UserProfileForUserProfileDetailsDTO
             return $"{FirstName} {LastName}";
         }
     }
-
-    public bool IsActive { get; set; }
     public string FormattedDateCreated => DateCreated.Date.ToString("MM-dd-yyyy");
 }

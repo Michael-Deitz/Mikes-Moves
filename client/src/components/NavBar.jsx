@@ -1,15 +1,6 @@
 import { useState } from "react";
 import { NavLink as RRNavLink } from "react-router-dom";
-import {
-Button,
-Collapse,
-Nav,
-NavLink,
-NavItem,
-Navbar,
-NavbarBrand,
-NavbarToggler,
-} from "reactstrap";
+import {Button, Collapse, Nav, NavLink, NavItem, Navbar, NavbarBrand, NavbarToggler,} from "reactstrap";
 import { logout } from "../managers/authManager";
 
 export default function NavBar({ loggedInUser, setLoggedInUser }) {
@@ -27,7 +18,27 @@ return (
         <>
             <NavbarToggler onClick={toggleNavbar} />
             <Collapse isOpen={open} navbar>
-            <Nav navbar></Nav>
+            <Nav navbar>
+            {loggedInUser.roles.includes("Admin") && (
+                <>
+                <NavItem>
+                    <NavLink tag={RRNavLink} to="trailers" >
+                        Trailers
+                    </NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink tag={RRNavLink} to="items">
+                        Items
+                    </NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink tag={RRNavLink} to="userprofile">
+                        My Profile
+                    </NavLink>
+                </NavItem> 
+            </>       
+            )}
+            </Nav>
             </Collapse>
             <Button
             color="primary"

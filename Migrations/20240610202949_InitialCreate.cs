@@ -286,12 +286,12 @@ namespace MikesMoves.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "9ce89d88-75da-4a80-9b0d-3fe58582b8e2", 0, "741b4c6a-9fdf-4731-9dea-b4c8dc41ec29", "bob@williams.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEBRjeBHxlMFWlqT3KE3imtYNGBEyRMIAgmpYZCiAjJXDmoEHsgceABwW33DANwVBwA==", "0987654321", false, "bd62f974-f112-4cd2-ac8d-b29d5b184785", false, "BobWilliams" },
-                    { "a7d21fac-3b21-454a-a747-075f072d0cf3", 0, "7677a47f-750d-440f-8913-982fff8eb236", "jane@smith.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEKbjnTZS48XEBJOYyBmIvPWHtYIe7ABPuUzZU+kd3K6j+M+cJ+CNvxZKVr0L/6ruHw==", "2223334444", false, "7f9aa146-11a0-43be-b26f-51f70fd78022", false, "JaneSmith" },
-                    { "c806cfae-bda9-47c5-8473-dd52fd056a9b", 0, "dec3ae89-a0fb-44cc-9443-844d9152859e", "alice@johnson.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEEP1oRzbSmmconPY25LB2nVG59HMBfppTQw8v22EulFdAjrAwiFliK+XbfIrmpAU9Q==", "1234567890", false, "2017ac52-9d1c-4578-86f2-48b1923a3809", false, "AliceJohnson" },
-                    { "d224a03d-bf0c-4a05-b728-e3521e45d74d", 0, "f56c68d2-09c6-4207-aa65-272a413bcfd9", "Eve@Davis.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEIDK27kVlUYbWohOBGBSdV3VM1jUEHrfT/6yfe3u3/Khm2jBeceRgRYCHcV+pZ5+rw==", "1112223333", false, "eb44a6cc-2a45-4478-b573-145c7566908f", false, "EveDavis" },
-                    { "d8d76512-74f1-43bb-b1fd-87d3a8aa36df", 0, "beeab7e3-8f19-4165-bd0f-1103c90de93a", "john@doe.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEDitu7vk9G8wyLTSU1/7ruZAusFxJvkibOGnR1yFAY7//SYjep+j528baB8vr8xEzg==", "3334445555", false, "198a2afc-2536-41a0-99db-919e5f9620fc", false, "JohnDoe" },
-                    { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "f96bb560-8261-4638-8210-72ee9f11048b", "admina@strator.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEAXDqJYeWkBz7WvWYr96Wovl5npuMkL+1BP1/1nOD8Ho56aTeDpk12qKKcK8qr3lPw==", "4445556666", false, "a5a54860-733e-4f33-94fb-eae27a76bf7d", false, "Administrator" }
+                    { "9ce89d88-75da-4a80-9b0d-3fe58582b8e2", 0, "544d2a5c-7184-4407-9799-664dd21e1058", "bob@williams.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEFpgjxVqnPvbnviEfGwNN+u0lbIW0/VM03U3yEwTTWDbbj5FZ7Mcragn9ITn06pZPA==", "0987654321", false, "d40d3945-ef32-465e-b60e-89bee8876e41", false, "BobWilliams" },
+                    { "a7d21fac-3b21-454a-a747-075f072d0cf3", 0, "96350012-2201-46ea-afd0-fc3826a79e96", "jane@smith.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEC2gG2clScLGN/9pmb8e45KoU5wUXLJr/qWCt13qM/lI4c6CiRJ9TQtbQh7MH6zMuA==", "2223334444", false, "ca7ada6e-42a7-42da-93ff-c11938f57d2f", false, "JaneSmith" },
+                    { "c806cfae-bda9-47c5-8473-dd52fd056a9b", 0, "24656b9f-717d-4c96-a2ae-8f31f3c16b42", "alice@johnson.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEMbBqCCxaX2md6KW1EoWlX59k7TLGS8J1+HTq5cizcgfTzEwwzfDRA3yBDmqow7rvQ==", "1234567890", false, "6ee34d56-733d-45f0-a464-ddeb5850b9b2", false, "AliceJohnson" },
+                    { "d224a03d-bf0c-4a05-b728-e3521e45d74d", 0, "748dffdc-e12b-4e26-9117-13445c29a7b3", "Eve@Davis.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAENalcnLn4zVf5WESW/yppsHOenj/MUJFsEoZ0a1waIELO+IFIvQQ0w/2D+eQqL9yfw==", "1112223333", false, "db6802eb-7e3a-43b6-a671-682be28b2d10", false, "EveDavis" },
+                    { "d8d76512-74f1-43bb-b1fd-87d3a8aa36df", 0, "62859190-7895-48bc-92d6-b375da3e8add", "john@doe.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEB4nsgabgXAvLW8P+uJDlyVePvwdgbr9OKjq6UG/RAlR05RTghKTaoINl3AMkp18/A==", "3334445555", false, "2c28ec08-9646-48b4-9315-c5cf5e3f2dcc", false, "JohnDoe" },
+                    { "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f", 0, "aa479e87-355c-48b1-ba4f-4cff602be95e", "admina@strator.comx", false, false, null, null, null, "AQAAAAIAAYagAAAAEMiNfCr+HDLiA4eNJTwR3GUprSptm5+/052Jau48AJrzp7LAB3B7D1sOvk6iGTiYqw==", "4445556666", false, "5113d1c1-c38c-49ab-9fa8-2dcdac405d63", false, "Administrator" }
                 });
 
             migrationBuilder.InsertData(
@@ -302,6 +302,15 @@ namespace MikesMoves.Migrations
                     { 1, 50m, 1000, 10, "https://example.com/images/trailer1.jpg", 20, "Location A", 5 },
                     { 2, 60m, 1200, 12, "https://example.com/images/trailer2.jpg", 25, "Location B", 6 },
                     { 3, 40m, 800, 8, "https://example.com/images/trailer3.jpg", 15, "Location C", 4 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[,]
+                {
+                    { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "d8d76512-74f1-43bb-b1fd-87d3a8aa36df" },
+                    { "c3aaeb97-d2ba-4a53-a521-4eea61e59b35", "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f" }
                 });
 
             migrationBuilder.InsertData(
@@ -332,9 +341,9 @@ namespace MikesMoves.Migrations
                 columns: new[] { "Id", "Content", "DateCreated", "ReceiverId", "SenderId" },
                 values: new object[,]
                 {
-                    { 1, "Message 1", new DateTime(2024, 6, 9, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9195), 2, 1 },
-                    { 2, "Message 2", new DateTime(2024, 6, 9, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9253), 3, 2 },
-                    { 3, "Message 3", new DateTime(2024, 6, 9, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9257), 1, 3 }
+                    { 1, "Message 1", new DateTime(2024, 6, 9, 15, 29, 48, 744, DateTimeKind.Local).AddTicks(1434), 2, 1 },
+                    { 2, "Message 2", new DateTime(2024, 6, 9, 15, 29, 48, 744, DateTimeKind.Local).AddTicks(1489), 3, 2 },
+                    { 3, "Message 3", new DateTime(2024, 6, 9, 15, 29, 48, 744, DateTimeKind.Local).AddTicks(1493), 1, 3 }
                 });
 
             migrationBuilder.InsertData(
@@ -342,9 +351,9 @@ namespace MikesMoves.Migrations
                 columns: new[] { "TrailerId", "UserId", "DateReserved" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2024, 6, 9, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9333) },
-                    { 2, 2, new DateTime(2024, 6, 8, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9337) },
-                    { 3, 3, new DateTime(2024, 6, 7, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9350) }
+                    { 1, 1, new DateTime(2024, 6, 9, 15, 29, 48, 744, DateTimeKind.Local).AddTicks(1538) },
+                    { 2, 2, new DateTime(2024, 6, 8, 15, 29, 48, 744, DateTimeKind.Local).AddTicks(1542) },
+                    { 3, 3, new DateTime(2024, 6, 7, 15, 29, 48, 744, DateTimeKind.Local).AddTicks(1550) }
                 });
 
             migrationBuilder.CreateIndex(

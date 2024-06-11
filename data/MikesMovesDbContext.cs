@@ -57,8 +57,8 @@ namespace MikesMoves.Data
             });
 
             modelBuilder.Entity<IdentityUser>().HasData(new IdentityUser[]
-            {
-                new IdentityUser
+        {
+            new IdentityUser
             {
                 Id = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f",
                 UserName = "Administrator",
@@ -105,6 +105,21 @@ namespace MikesMoves.Data
                 Email = "Eve@Davis.comx",
                 PhoneNumber = "1112223333",
                 PasswordHash = new PasswordHasher<IdentityUser>().HashPassword(null, _configuration["AdminPassword"])
+            },
+
+        });
+
+        modelBuilder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>[]
+        {
+            new IdentityUserRole<string>
+            {
+                RoleId = "c3aaeb97-d2ba-4a53-a521-4eea61e59b35",
+                UserId = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f"
+            },
+            new IdentityUserRole<string>
+            {
+                RoleId = "c3aaeb97-d2ba-4a53-a521-4eea61e59b35",
+                UserId = "d8d76512-74f1-43bb-b1fd-87d3a8aa36df"
             },
 
         });

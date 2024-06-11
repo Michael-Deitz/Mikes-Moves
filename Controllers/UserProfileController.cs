@@ -64,6 +64,7 @@ public class UserProfileController : ControllerBase
             Email = up.IdentityUser.Email,
             UserName = up.IdentityUser.UserName,
             IdentityUserId = up.IdentityUserId,
+            PhoneNumber = up.IdentityUser.PhoneNumber,
             DateCreated = up.DateCreated,
             ImageLocation = up.ImageLocation,
             Roles = _dbContext.UserRoles
@@ -128,27 +129,58 @@ public class UserProfileController : ControllerBase
         return Ok(user);
     }
 
-    // [HttpPut("{id}/image")]
-    // public IActionResult UpdateImg(int id, [FromForm] UserProfileImgUpdateDTO img)
-    // {
-    //     UserProfile foundUser = _dbContext.UserProfiles.SingleOrDefault(up => up.Id == id);
+    [HttpPut("{id}/image")]
+    public IActionResult UpdateImg(int id, [FromForm] UserProfileImgUpdateDTO img)
+    {
+        UserProfile foundUser = _dbContext.UserProfiles.SingleOrDefault(up => up.Id == id);
 
-    //     if (foundUser == null || img.FormFile.Length == 0)
-    //     {
-    //         return BadRequest();
-    //     }
+        if (foundUser == null || img.FormFile.Length == 0)
+        {
+            return BadRequest();
+        }
 
-    //     byte[] file;
-    //     using (var memoryStream = new MemoryStream())
-    //     {
-    //         img.FormFile.CopyTo(memoryStream);
-    //         file = memoryStream.ToArray();
-    //     }
+        byte[] file;
+        using (var memoryStream = new MemoryStream())
+        {
+            img.FormFile.CopyTo(memoryStream);
+            file = memoryStream.ToArray();
+        }
 
-    //     foundUser.ImageBlob = file;
+        foundUser.ImageBlob = file;
 
-    //     _dbContext.SaveChanges();
+        _dbContext.SaveChanges();
 
-    //     return NoContent();
-    // }
+        return NoContent();
+    }
+
+    [HttpPut("{id}")]
+    [Authorize]
+    public IActionResult UserProfileUpdate(int id, UserProfileUpdateDTO updatedUserProfile)
+    {
+        UserProfile userProfile = _dbContext.UserProfiles.SingleOrDefault(up => up.Id == id);
+        
+
+        if(userProfile == null)
+        {
+            return NotFound();
+        }
+
+        userProfile.FirstName = updatedUserProfile.FirstName;
+        userProfile.LastName = updatedUserProfile.LastName;
+
+        IdentityUser user = _dbContext.Users.SingleOrDefault(u => u.Id == userProfile.IdentityUserId);
+
+        if(user == null)
+        {
+            return NotFound();
+        }
+
+        user.UserName = updatedUserProfile.UserName;
+        user.Email = updatedUserProfile.Email;
+        user.PhoneNumber = updatedUserProfile.PhoneNumber;
+
+        _dbContext.SaveChanges();
+
+        return Ok();
+    }
 }

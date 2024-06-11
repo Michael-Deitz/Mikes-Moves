@@ -31,6 +31,7 @@ namespace MikesMoves.Models
         public ICollection<Reservation> Reservations { get; set; }
         public ICollection<Message> SentMessages { get; set; }
         public ICollection<Message> ReceivedMessages { get; set; }
+        public byte[]? ImageBlob { get; set; }
         public string FullName
         {
             get
