@@ -4,6 +4,7 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import UserProfileDetails from "./userprofiles/MyUserProfile";
 import UpdateUserProfile from "./userprofiles/UpdateUserProfile";
+import TrailerList from "./trailers/TrailerList";
 
 export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
   return (
@@ -21,7 +22,7 @@ export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
           path="trailers"
           element={
             <AuthorizedRoute  loggedInUser={loggedInUser}>
-              <></>
+              <TrailerList/>
             </AuthorizedRoute>
           }
         />

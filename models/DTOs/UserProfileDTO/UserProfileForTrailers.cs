@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity;
 namespace MikesMoves.Models.DTOs
 
 {
-    public class UserProfileNoNavDTO
+    public class UserProfileForTrailersDTO
     {
         public int Id { get; set; }
         [Required]

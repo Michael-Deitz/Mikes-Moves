@@ -149,14 +149,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "01560c42-d8e0-4075-8b46-e3bbbfff3cb7",
+                            ConcurrencyStamp = "64f18a62-f0dd-494d-ad22-0ec518d2c044",
                             Email = "admina@strator.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEJr6i3bGqNDQbFonVo69SDx74rhCCx0sagG1vgy3TyQpyy8qABS9BvJZH1fafrTQGQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEN5yCBuIum5jh7N1dUX1cFPQNNHB6UvDg4yMCmb6jfuZTvfX2KeG5hAcMo/lwIHUTw==",
                             PhoneNumber = "4445556666",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "95806742-4e8e-48f6-973e-d1a4f4536bae",
+                            SecurityStamp = "7af42361-a05b-4a7a-8a43-0cdd69fd7210",
                             TwoFactorEnabled = false,
                             UserName = "Administrator"
                         },
@@ -164,14 +164,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "d8d76512-74f1-43bb-b1fd-87d3a8aa36df",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0b401712-0609-40c3-91e9-28362a5ba2e8",
+                            ConcurrencyStamp = "e94cde1f-469d-4db6-901f-25669948f184",
                             Email = "john@doe.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEARRwPbWTmmE5swhcOATubo2dX56WIF6pr3mwNgj5MQoBBorIR0xeeuVP3kri0EJ8g==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHgmwiT/lDCKlNI1zF04qPEq6xFkfMvxxWF212Lf8I1D8dm5mzMM2Z0rWZEWke7HVA==",
                             PhoneNumber = "3334445555",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "95611dcc-2d8e-4c42-8bcc-96a51e0cd902",
+                            SecurityStamp = "a804d56d-48dc-4e4f-8989-3c499e08da3d",
                             TwoFactorEnabled = false,
                             UserName = "JohnDoe"
                         },
@@ -179,14 +179,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "a7d21fac-3b21-454a-a747-075f072d0cf3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ba85bb35-19db-44a1-8701-595858c021ed",
+                            ConcurrencyStamp = "cf289da4-f2a2-4481-8708-d21aa5ab9f56",
                             Email = "jane@smith.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEBjfjxZrvlml4sKbmjBc9m0bIPrAyc1KrDBgq+fjN2vwYxBiBJ2du+IVPUTqfgpeHw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOxkvrysmZBkGYrrc1tLcRkAVLffK2mBZoDtuC0Rjhmi4mAAEkqny0lT3ME6EUJEQQ==",
                             PhoneNumber = "2223334444",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ff27029d-d85f-408c-a3a9-e28f015ef87f",
+                            SecurityStamp = "9971a2d2-54fd-46d5-a86a-78c5de27618c",
                             TwoFactorEnabled = false,
                             UserName = "JaneSmith"
                         },
@@ -194,14 +194,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "c806cfae-bda9-47c5-8473-dd52fd056a9b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f0d7443a-26a0-41f4-8f43-449f0a7c427a",
+                            ConcurrencyStamp = "1a933ca6-c73c-4704-8f8f-c59882a9aba7",
                             Email = "alice@johnson.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEMdtB8KHZlLPQLwc4lXKtg0UmGJnocRZ0jRECMorA2uoBoAE55vVyBDwejiW92XyZg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBvbmzN2HaN9BYYiBI8Ii3jNaeUIvZPXzfztGoVscM2icKwayDZbT1GWCp7nbAyIHQ==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "3ac8df9d-bb6e-42a8-9568-8372977a2053",
+                            SecurityStamp = "cbb18a54-3ac1-45b4-a3cb-068055ced065",
                             TwoFactorEnabled = false,
                             UserName = "AliceJohnson"
                         },
@@ -209,14 +209,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "9ce89d88-75da-4a80-9b0d-3fe58582b8e2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "89cc1528-6b7f-4c0c-8c52-bbe205c733bf",
+                            ConcurrencyStamp = "bec59980-8df6-4cbd-b6d5-758b1ba938f5",
                             Email = "bob@williams.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEE5wK8ErN6q9Z1FkD3nAujODOHjSmAs4Dzp39HaHghyMsgh1ksFifOQjhFt7R7UILw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAENVzAPr7NIXqANg3UO/0yTGKBNHnM617IS7BgIu/6e3FaszPwf2zltxeJLAIJybJoQ==",
                             PhoneNumber = "0987654321",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "dc03299d-1f9b-44df-80ae-553907aff50c",
+                            SecurityStamp = "fd5d9068-1cef-44f1-a365-ec05db86e651",
                             TwoFactorEnabled = false,
                             UserName = "BobWilliams"
                         },
@@ -224,14 +224,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "d224a03d-bf0c-4a05-b728-e3521e45d74d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9c87867a-6221-4e29-a539-612b13ee7952",
+                            ConcurrencyStamp = "32053d6e-1240-47ab-8c43-3a6c74ae1de6",
                             Email = "Eve@Davis.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEF0x6hgkUhpbasGwXTS0u1bv7bNeiT39Bri9y02BqC4qmFNle68fWwC24HVrT09Xkg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAELxasz6Nom03B+CMZrAN7u0BZElYJoIgD5diduu3Y8wHq0xTSVCntDFWjHvzy68APw==",
                             PhoneNumber = "1112223333",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "977d0607-ec7f-4c8d-85c7-2892c052bdf5",
+                            SecurityStamp = "805f7eb9-560c-4e24-91aa-f9ddb8f24734",
                             TwoFactorEnabled = false,
                             UserName = "EveDavis"
                         });
@@ -342,9 +342,15 @@ namespace MikesMoves.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<decimal>("Height")
+                        .HasColumnType("numeric");
+
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<decimal>("Length")
+                        .HasColumnType("numeric");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -352,6 +358,15 @@ namespace MikesMoves.Migrations
 
                     b.Property<int>("TrailerId")
                         .HasColumnType("integer");
+
+                    b.Property<int>("UserProfileId")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("Weight")
+                        .HasColumnType("numeric");
+
+                    b.Property<decimal>("Width")
+                        .HasColumnType("numeric");
 
                     b.HasKey("Id");
 
@@ -364,25 +379,40 @@ namespace MikesMoves.Migrations
                         {
                             Id = 1,
                             Description = "Description 1",
-                            ImageUrl = "https://example.com/images/item1.jpg",
-                            Name = "Item 1",
-                            TrailerId = 1
+                            Height = 6.3m,
+                            ImageUrl = "https://cdn.dealerspike.com/imglib/v1/800x600/imglib/Assets/Inventory/B9/B9/B9B9E054-562E-492F-8987-EE47D3DCB4A6.jpg",
+                            Length = 12.5m,
+                            Name = "Polaris Ranger Crew",
+                            TrailerId = 1,
+                            UserProfileId = 3,
+                            Weight = 1874.0m,
+                            Width = 5.2m
                         },
                         new
                         {
                             Id = 2,
                             Description = "Description 2",
-                            ImageUrl = "https://example.com/images/item2.jpg",
-                            Name = "Item 2",
-                            TrailerId = 2
+                            Height = 4.8m,
+                            ImageUrl = "https://cdn.motor1.com/images/mgl/ojB1G4/0:58:1919:1438/1993-honda-accord-se-132-00-miles-pristine-condition.webp",
+                            Length = 16.1m,
+                            Name = "Honda Accord",
+                            TrailerId = 2,
+                            UserProfileId = 5,
+                            Weight = 3307.0m,
+                            Width = 6.1m
                         },
                         new
                         {
                             Id = 3,
                             Description = "Description 3",
-                            ImageUrl = "https://example.com/images/item3.jpg",
-                            Name = "Item 3",
-                            TrailerId = 3
+                            Height = 10.0m,
+                            ImageUrl = "https://blog.ridenow.com/hs-fs/hubfs/2023%20Yamaha%20Wolverine%20RMAX2%20Sport%20UTVs%20in%20baby%20blue%20color%20trailing%20on%20a%20forest%20trail.jpg?width=663&height=497&name=2023%20Yamaha%20Wolverine%20RMAX2%20Sport%20UTVs%20in%20baby%20blue%20color%20trailing%20on%20a%20forest%20trail.jpg",
+                            Length = 19.0m,
+                            Name = "Pair of Polaris RZR UTVs",
+                            TrailerId = 3,
+                            UserProfileId = 1,
+                            Weight = 8000.0m,
+                            Width = 8.0m
                         });
                 });
 
@@ -420,7 +450,7 @@ namespace MikesMoves.Migrations
                         {
                             Id = 1,
                             Content = "Message 1",
-                            DateCreated = new DateTime(2024, 6, 10, 12, 3, 22, 501, DateTimeKind.Local).AddTicks(1317),
+                            DateCreated = new DateTime(2024, 6, 11, 11, 29, 20, 595, DateTimeKind.Local).AddTicks(4567),
                             ReceiverId = 2,
                             SenderId = 1
                         },
@@ -428,7 +458,7 @@ namespace MikesMoves.Migrations
                         {
                             Id = 2,
                             Content = "Message 2",
-                            DateCreated = new DateTime(2024, 6, 10, 12, 3, 22, 501, DateTimeKind.Local).AddTicks(1425),
+                            DateCreated = new DateTime(2024, 6, 11, 11, 29, 20, 595, DateTimeKind.Local).AddTicks(4656),
                             ReceiverId = 3,
                             SenderId = 2
                         },
@@ -436,7 +466,7 @@ namespace MikesMoves.Migrations
                         {
                             Id = 3,
                             Content = "Message 3",
-                            DateCreated = new DateTime(2024, 6, 10, 12, 3, 22, 501, DateTimeKind.Local).AddTicks(1429),
+                            DateCreated = new DateTime(2024, 6, 11, 11, 29, 20, 595, DateTimeKind.Local).AddTicks(4659),
                             ReceiverId = 1,
                             SenderId = 3
                         });
@@ -464,19 +494,19 @@ namespace MikesMoves.Migrations
                         {
                             UserId = 1,
                             TrailerId = 1,
-                            DateReserved = new DateTime(2024, 6, 10, 12, 3, 22, 501, DateTimeKind.Local).AddTicks(1476)
+                            DateReserved = new DateTime(2024, 6, 11, 11, 29, 20, 595, DateTimeKind.Local).AddTicks(4705)
                         },
                         new
                         {
                             UserId = 2,
                             TrailerId = 2,
-                            DateReserved = new DateTime(2024, 6, 9, 12, 3, 22, 501, DateTimeKind.Local).AddTicks(1480)
+                            DateReserved = new DateTime(2024, 6, 10, 11, 29, 20, 595, DateTimeKind.Local).AddTicks(4709)
                         },
                         new
                         {
                             UserId = 3,
                             TrailerId = 3,
-                            DateReserved = new DateTime(2024, 6, 8, 12, 3, 22, 501, DateTimeKind.Local).AddTicks(1488)
+                            DateReserved = new DateTime(2024, 6, 9, 11, 29, 20, 595, DateTimeKind.Local).AddTicks(4716)
                         });
                 });
 
@@ -491,25 +521,39 @@ namespace MikesMoves.Migrations
                     b.Property<decimal>("BasePrice")
                         .HasColumnType("numeric");
 
-                    b.Property<int>("Capacity")
-                        .HasColumnType("integer");
+                    b.Property<decimal>("Capacity")
+                        .HasColumnType("numeric");
 
-                    b.Property<int>("Height")
-                        .HasColumnType("integer");
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("Height")
+                        .HasColumnType("numeric");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Length")
-                        .HasColumnType("integer");
+                    b.Property<decimal>("Length")
+                        .HasColumnType("numeric");
 
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Width")
+                    b.Property<decimal>("PricePerMile")
+                        .HasColumnType("numeric");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("UserProfileId")
                         .HasColumnType("integer");
+
+                    b.Property<decimal>("Width")
+                        .HasColumnType("numeric");
 
                     b.HasKey("Id");
 
@@ -519,35 +563,47 @@ namespace MikesMoves.Migrations
                         new
                         {
                             Id = 1,
-                            BasePrice = 50m,
-                            Capacity = 1000,
-                            Height = 10,
-                            ImageUrl = "https://example.com/images/trailer1.jpg",
-                            Length = 20,
+                            BasePrice = 250.00m,
+                            Capacity = 5000.0m,
+                            Description = "16Ft Trailer",
+                            Height = 8.0m,
+                            ImageUrl = "https://www.gatormade.com/wp-content/uploads/2016/07/12-30.jpg",
+                            Length = 16.0m,
                             Location = "Location A",
-                            Width = 5
+                            PricePerMile = 2.00m,
+                            Type = "Open",
+                            UserProfileId = 1,
+                            Width = 7.0m
                         },
                         new
                         {
                             Id = 2,
-                            BasePrice = 60m,
-                            Capacity = 1200,
-                            Height = 12,
-                            ImageUrl = "https://example.com/images/trailer2.jpg",
-                            Length = 25,
+                            BasePrice = 350.00m,
+                            Capacity = 8000.0m,
+                            Description = "18Ft Trailer",
+                            Height = 9.0m,
+                            ImageUrl = "https://dealer-cdn.com/IEWsDN/tbftrc/2022_PJ_Trailers_UL182-18FT_V7219_Utility_Trailer_1YPUsybgbcyq.jpg",
+                            Length = 18.0m,
                             Location = "Location B",
-                            Width = 6
+                            PricePerMile = 2.50m,
+                            Type = "Open",
+                            UserProfileId = 2,
+                            Width = 8.0m
                         },
                         new
                         {
                             Id = 3,
-                            BasePrice = 40m,
-                            Capacity = 800,
-                            Height = 8,
-                            ImageUrl = "https://example.com/images/trailer3.jpg",
-                            Length = 15,
+                            BasePrice = 400.00m,
+                            Capacity = 10000.0m,
+                            Description = "20Ft Trailer",
+                            Height = 10.0m,
+                            ImageUrl = "https://dealer-cdn.com/BRTBhm/5UPgUS/2021_PJ_Trailers_83_in._Tandem_Axle_Channel_Utility_UL_Utility_Trailer_VLqXqK.jpg",
+                            Length = 20.0m,
                             Location = "Location C",
-                            Width = 4
+                            PricePerMile = 3.00m,
+                            Type = "Open",
+                            UserProfileId = 4,
+                            Width = 8.5m
                         });
                 });
 

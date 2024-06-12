@@ -19,4 +19,49 @@ public class TrailerController : ControllerBase
     {
         _dbContext = context;
     }
+
+    [HttpGet]
+    [Authorize]
+    public IActionResult GetAllTrailers()
+    {
+        return Ok(_dbContext.Trailers
+        .Select(t => new TrailerNoNavDTO
+        {
+            Id = t.Id,
+            Height = t.Height,
+            Width = t.Width,
+            Length = t.Length,
+            Capacity = t.Capacity,
+            Location = t.Location,
+            BasePrice = t.BasePrice,
+            ImageUrl = t.ImageUrl,
+            UserProfileId = t.UserProfileId,
+            Type = t.Type,
+            Description = t.Description
+        }));
+    }
+
+    [HttpGet]
+    [Authorize]
+    public IActionResult GetAllTrailersWithUsers()
+    {
+        return Ok(_dbContext.Trailers
+        .Include(t => t.UserProfile)
+            .ThenInclude(t => t.IdentityUser)
+        .Select(t => new TrailerNoNavDTO
+        {
+            Id = t.Id,
+            Height = t.Height,
+            Width = t.Width,
+            Length = t.Length,
+            Capacity = t.Capacity,
+            Location = t.Location,
+            BasePrice = t.BasePrice,
+            ImageUrl = t.ImageUrl,
+            UserProfileId = t.UserProfileId,
+            Type = t.Type,
+            Description = t.Description,
+            
+        }));
+    }
 }
