@@ -37,11 +37,12 @@ public class TrailerController : ControllerBase
             ImageUrl = t.ImageUrl,
             UserProfileId = t.UserProfileId,
             Type = t.Type,
-            Description = t.Description
+            Description = t.Description,
+            PricePerMile = t.PricePerMile
         }));
     }
 
-    [HttpGet]
+    [HttpGet("withusers")]
     [Authorize]
     public IActionResult GetAllTrailersWithUsers()
     {
