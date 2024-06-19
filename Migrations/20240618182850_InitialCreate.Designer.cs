@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MikesMoves.Migrations
 {
     [DbContext(typeof(MikesMovesDbContext))]
-    [Migration("20240610183030_InitialCreate")]
+    [Migration("20240618182850_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -152,14 +152,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f96bb560-8261-4638-8210-72ee9f11048b",
+                            ConcurrencyStamp = "d01819dc-ee06-4cf1-b871-7ddcb13707f9",
                             Email = "admina@strator.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEAXDqJYeWkBz7WvWYr96Wovl5npuMkL+1BP1/1nOD8Ho56aTeDpk12qKKcK8qr3lPw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDu6J1QBFe21rNEPJhSp0uq0w6prq5jQW+zvv8HqrAkN6owXVcm3Y9960Zd7aK9Izw==",
                             PhoneNumber = "4445556666",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a5a54860-733e-4f33-94fb-eae27a76bf7d",
+                            SecurityStamp = "0d823cd2-a1b4-45c6-8ace-71613e939f16",
                             TwoFactorEnabled = false,
                             UserName = "Administrator"
                         },
@@ -167,14 +167,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "d8d76512-74f1-43bb-b1fd-87d3a8aa36df",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "beeab7e3-8f19-4165-bd0f-1103c90de93a",
+                            ConcurrencyStamp = "19cd0abb-fb7c-489f-bf16-0bfbe4622b21",
                             Email = "john@doe.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEDitu7vk9G8wyLTSU1/7ruZAusFxJvkibOGnR1yFAY7//SYjep+j528baB8vr8xEzg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEL//JTpn7Bp38M6LG1nKYBNpGDYuMhUu/vqwnUxtFNzbwrq8PyGT5IGkeqxs+Ukp5g==",
                             PhoneNumber = "3334445555",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "198a2afc-2536-41a0-99db-919e5f9620fc",
+                            SecurityStamp = "2eab3745-c390-4ab2-8b89-cebf8d2de7ac",
                             TwoFactorEnabled = false,
                             UserName = "JohnDoe"
                         },
@@ -182,14 +182,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "a7d21fac-3b21-454a-a747-075f072d0cf3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7677a47f-750d-440f-8913-982fff8eb236",
+                            ConcurrencyStamp = "ba8ef230-9a6e-498a-9f73-267fb95b8eb7",
                             Email = "jane@smith.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEKbjnTZS48XEBJOYyBmIvPWHtYIe7ABPuUzZU+kd3K6j+M+cJ+CNvxZKVr0L/6ruHw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJtvCseUpYZo39gjSMJ9PluezijHkx8+baK43nPYKn/wmJMPcq60Rq7ny9KUaVgPlw==",
                             PhoneNumber = "2223334444",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7f9aa146-11a0-43be-b26f-51f70fd78022",
+                            SecurityStamp = "dc371c51-117e-48ea-9abf-16d708489576",
                             TwoFactorEnabled = false,
                             UserName = "JaneSmith"
                         },
@@ -197,14 +197,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "c806cfae-bda9-47c5-8473-dd52fd056a9b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "dec3ae89-a0fb-44cc-9443-844d9152859e",
+                            ConcurrencyStamp = "35503853-d21f-4b51-acb5-2ddcc90c897a",
                             Email = "alice@johnson.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEEP1oRzbSmmconPY25LB2nVG59HMBfppTQw8v22EulFdAjrAwiFliK+XbfIrmpAU9Q==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEM0AnP5TZXB9DgGCEAnyZiN9RvIWRgXz8OroV9LsFR03Rb3EL5ic/GLpvef8O0mhg==",
                             PhoneNumber = "1234567890",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2017ac52-9d1c-4578-86f2-48b1923a3809",
+                            SecurityStamp = "afc91ea1-0ce5-4e2c-a861-45b4a4bce614",
                             TwoFactorEnabled = false,
                             UserName = "AliceJohnson"
                         },
@@ -212,14 +212,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "9ce89d88-75da-4a80-9b0d-3fe58582b8e2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "741b4c6a-9fdf-4731-9dea-b4c8dc41ec29",
+                            ConcurrencyStamp = "4c153078-a3c1-4923-8ac7-39bc8cb5235d",
                             Email = "bob@williams.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEBRjeBHxlMFWlqT3KE3imtYNGBEyRMIAgmpYZCiAjJXDmoEHsgceABwW33DANwVBwA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKbG6DVAilLgdX7hwSNrBUki4+jDg1534/R7E5vnO5+2qJBGiSljpDLQiFV9fiEOBw==",
                             PhoneNumber = "0987654321",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bd62f974-f112-4cd2-ac8d-b29d5b184785",
+                            SecurityStamp = "a74d5581-4029-4f76-86a5-a57d175b8a1b",
                             TwoFactorEnabled = false,
                             UserName = "BobWilliams"
                         },
@@ -227,14 +227,14 @@ namespace MikesMoves.Migrations
                         {
                             Id = "d224a03d-bf0c-4a05-b728-e3521e45d74d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f56c68d2-09c6-4207-aa65-272a413bcfd9",
+                            ConcurrencyStamp = "090a1e97-ef76-4445-ab4d-9645dde0554d",
                             Email = "Eve@Davis.comx",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEIDK27kVlUYbWohOBGBSdV3VM1jUEHrfT/6yfe3u3/Khm2jBeceRgRYCHcV+pZ5+rw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMQ0bJJMW/ui9W+kB3h0ZRnL6B/2bThvZSXb6YAdktOGFMOAdHp7h/W3STZtfQhhKw==",
                             PhoneNumber = "1112223333",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "eb44a6cc-2a45-4478-b573-145c7566908f",
+                            SecurityStamp = "6b96be21-c899-4dea-a977-d1dac00d6b2f",
                             TwoFactorEnabled = false,
                             UserName = "EveDavis"
                         });
@@ -300,6 +300,18 @@ namespace MikesMoves.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f",
+                            RoleId = "c3aaeb97-d2ba-4a53-a521-4eea61e59b35"
+                        },
+                        new
+                        {
+                            UserId = "d8d76512-74f1-43bb-b1fd-87d3a8aa36df",
+                            RoleId = "c3aaeb97-d2ba-4a53-a521-4eea61e59b35"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -333,20 +345,37 @@ namespace MikesMoves.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<decimal>("Height")
+                        .HasColumnType("numeric");
+
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<decimal>("Length")
+                        .HasColumnType("numeric");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("TrailerId")
+                    b.Property<int?>("TrailerId")
                         .HasColumnType("integer");
+
+                    b.Property<int>("UserProfileId")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("Weight")
+                        .HasColumnType("numeric");
+
+                    b.Property<decimal>("Width")
+                        .HasColumnType("numeric");
 
                     b.HasKey("Id");
 
                     b.HasIndex("TrailerId");
+
+                    b.HasIndex("UserProfileId");
 
                     b.ToTable("Items");
 
@@ -355,25 +384,40 @@ namespace MikesMoves.Migrations
                         {
                             Id = 1,
                             Description = "Description 1",
-                            ImageUrl = "https://example.com/images/item1.jpg",
-                            Name = "Item 1",
-                            TrailerId = 1
+                            Height = 6.3m,
+                            ImageUrl = "https://cdn.dealerspike.com/imglib/v1/800x600/imglib/Assets/Inventory/B9/B9/B9B9E054-562E-492F-8987-EE47D3DCB4A6.jpg",
+                            Length = 12.5m,
+                            Name = "Polaris Ranger Crew",
+                            TrailerId = 1,
+                            UserProfileId = 3,
+                            Weight = 1874.0m,
+                            Width = 5.2m
                         },
                         new
                         {
                             Id = 2,
                             Description = "Description 2",
-                            ImageUrl = "https://example.com/images/item2.jpg",
-                            Name = "Item 2",
-                            TrailerId = 2
+                            Height = 4.8m,
+                            ImageUrl = "https://cdn.motor1.com/images/mgl/ojB1G4/0:58:1919:1438/1993-honda-accord-se-132-00-miles-pristine-condition.webp",
+                            Length = 16.1m,
+                            Name = "Honda Accord",
+                            TrailerId = 2,
+                            UserProfileId = 5,
+                            Weight = 3307.0m,
+                            Width = 6.1m
                         },
                         new
                         {
                             Id = 3,
                             Description = "Description 3",
-                            ImageUrl = "https://example.com/images/item3.jpg",
-                            Name = "Item 3",
-                            TrailerId = 3
+                            Height = 10.0m,
+                            ImageUrl = "https://blog.ridenow.com/hs-fs/hubfs/2023%20Yamaha%20Wolverine%20RMAX2%20Sport%20UTVs%20in%20baby%20blue%20color%20trailing%20on%20a%20forest%20trail.jpg?width=663&height=497&name=2023%20Yamaha%20Wolverine%20RMAX2%20Sport%20UTVs%20in%20baby%20blue%20color%20trailing%20on%20a%20forest%20trail.jpg",
+                            Length = 19.0m,
+                            Name = "Pair of Polaris RZR UTVs",
+                            TrailerId = 3,
+                            UserProfileId = 1,
+                            Weight = 8000.0m,
+                            Width = 8.0m
                         });
                 });
 
@@ -411,7 +455,7 @@ namespace MikesMoves.Migrations
                         {
                             Id = 1,
                             Content = "Message 1",
-                            DateCreated = new DateTime(2024, 6, 9, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9195),
+                            DateCreated = new DateTime(2024, 6, 17, 13, 28, 50, 75, DateTimeKind.Local).AddTicks(3857),
                             ReceiverId = 2,
                             SenderId = 1
                         },
@@ -419,7 +463,7 @@ namespace MikesMoves.Migrations
                         {
                             Id = 2,
                             Content = "Message 2",
-                            DateCreated = new DateTime(2024, 6, 9, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9253),
+                            DateCreated = new DateTime(2024, 6, 17, 13, 28, 50, 75, DateTimeKind.Local).AddTicks(3917),
                             ReceiverId = 3,
                             SenderId = 2
                         },
@@ -427,7 +471,7 @@ namespace MikesMoves.Migrations
                         {
                             Id = 3,
                             Content = "Message 3",
-                            DateCreated = new DateTime(2024, 6, 9, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9257),
+                            DateCreated = new DateTime(2024, 6, 17, 13, 28, 50, 75, DateTimeKind.Local).AddTicks(3920),
                             ReceiverId = 1,
                             SenderId = 3
                         });
@@ -435,39 +479,50 @@ namespace MikesMoves.Migrations
 
             modelBuilder.Entity("MikesMoves.Models.Reservation", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    b.Property<int>("TrailerId")
-                        .HasColumnType("integer");
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("DateReserved")
                         .HasColumnType("timestamp without time zone");
 
-                    b.HasKey("UserId", "TrailerId");
+                    b.Property<int>("TrailerId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("TrailerId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Reservations");
 
                     b.HasData(
                         new
                         {
-                            UserId = 1,
+                            Id = 1,
+                            DateReserved = new DateTime(2024, 6, 17, 13, 28, 50, 75, DateTimeKind.Local).AddTicks(3984),
                             TrailerId = 1,
-                            DateReserved = new DateTime(2024, 6, 9, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9333)
+                            UserId = 1
                         },
                         new
                         {
-                            UserId = 2,
+                            Id = 2,
+                            DateReserved = new DateTime(2024, 6, 16, 13, 28, 50, 75, DateTimeKind.Local).AddTicks(3989),
                             TrailerId = 2,
-                            DateReserved = new DateTime(2024, 6, 8, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9337)
+                            UserId = 2
                         },
                         new
                         {
-                            UserId = 3,
+                            Id = 3,
+                            DateReserved = new DateTime(2024, 6, 15, 13, 28, 50, 75, DateTimeKind.Local).AddTicks(3998),
                             TrailerId = 3,
-                            DateReserved = new DateTime(2024, 6, 7, 13, 30, 29, 968, DateTimeKind.Local).AddTicks(9350)
+                            UserId = 3
                         });
                 });
 
@@ -482,27 +537,43 @@ namespace MikesMoves.Migrations
                     b.Property<decimal>("BasePrice")
                         .HasColumnType("numeric");
 
-                    b.Property<int>("Capacity")
-                        .HasColumnType("integer");
+                    b.Property<decimal>("Capacity")
+                        .HasColumnType("numeric");
 
-                    b.Property<int>("Height")
-                        .HasColumnType("integer");
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<decimal>("Height")
+                        .HasColumnType("numeric");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Length")
-                        .HasColumnType("integer");
+                    b.Property<decimal>("Length")
+                        .HasColumnType("numeric");
 
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Width")
+                    b.Property<decimal>("PricePerMile")
+                        .HasColumnType("numeric");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("UserProfileId")
                         .HasColumnType("integer");
 
+                    b.Property<decimal>("Width")
+                        .HasColumnType("numeric");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserProfileId");
 
                     b.ToTable("Trailers");
 
@@ -510,35 +581,47 @@ namespace MikesMoves.Migrations
                         new
                         {
                             Id = 1,
-                            BasePrice = 50m,
-                            Capacity = 1000,
-                            Height = 10,
-                            ImageUrl = "https://example.com/images/trailer1.jpg",
-                            Length = 20,
+                            BasePrice = 250.00m,
+                            Capacity = 5000.0m,
+                            Description = "16Ft Trailer",
+                            Height = 8.0m,
+                            ImageUrl = "https://www.gatormade.com/wp-content/uploads/2016/07/12-30.jpg",
+                            Length = 16.0m,
                             Location = "Location A",
-                            Width = 5
+                            PricePerMile = 2.00m,
+                            Type = "Open",
+                            UserProfileId = 1,
+                            Width = 7.0m
                         },
                         new
                         {
                             Id = 2,
-                            BasePrice = 60m,
-                            Capacity = 1200,
-                            Height = 12,
-                            ImageUrl = "https://example.com/images/trailer2.jpg",
-                            Length = 25,
+                            BasePrice = 350.00m,
+                            Capacity = 8000.0m,
+                            Description = "18Ft Trailer",
+                            Height = 9.0m,
+                            ImageUrl = "https://dealer-cdn.com/IEWsDN/tbftrc/2022_PJ_Trailers_UL182-18FT_V7219_Utility_Trailer_1YPUsybgbcyq.jpg",
+                            Length = 18.0m,
                             Location = "Location B",
-                            Width = 6
+                            PricePerMile = 2.50m,
+                            Type = "Open",
+                            UserProfileId = 2,
+                            Width = 8.0m
                         },
                         new
                         {
                             Id = 3,
-                            BasePrice = 40m,
-                            Capacity = 800,
-                            Height = 8,
-                            ImageUrl = "https://example.com/images/trailer3.jpg",
-                            Length = 15,
+                            BasePrice = 400.00m,
+                            Capacity = 10000.0m,
+                            Description = "20Ft Trailer",
+                            Height = 10.0m,
+                            ImageUrl = "https://dealer-cdn.com/BRTBhm/5UPgUS/2021_PJ_Trailers_83_in._Tandem_Axle_Channel_Utility_UL_Utility_Trailer_VLqXqK.jpg",
+                            Length = 20.0m,
                             Location = "Location C",
-                            Width = 4
+                            PricePerMile = 3.00m,
+                            Type = "Open",
+                            UserProfileId = 4,
+                            Width = 8.5m
                         });
                 });
 
@@ -562,6 +645,9 @@ namespace MikesMoves.Migrations
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
+
+                    b.Property<byte[]>("ImageBlob")
+                        .HasColumnType("bytea");
 
                     b.Property<string>("ImageLocation")
                         .IsRequired()
@@ -690,11 +776,17 @@ namespace MikesMoves.Migrations
                 {
                     b.HasOne("MikesMoves.Models.Trailer", "Trailer")
                         .WithMany("Items")
-                        .HasForeignKey("TrailerId")
+                        .HasForeignKey("TrailerId");
+
+                    b.HasOne("MikesMoves.Models.UserProfile", "UserProfile")
+                        .WithMany()
+                        .HasForeignKey("UserProfileId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Trailer");
+
+                    b.Navigation("UserProfile");
                 });
 
             modelBuilder.Entity("MikesMoves.Models.Message", b =>
@@ -731,6 +823,17 @@ namespace MikesMoves.Migrations
                         .IsRequired();
 
                     b.Navigation("Trailer");
+
+                    b.Navigation("UserProfile");
+                });
+
+            modelBuilder.Entity("MikesMoves.Models.Trailer", b =>
+                {
+                    b.HasOne("MikesMoves.Models.UserProfile", "UserProfile")
+                        .WithMany()
+                        .HasForeignKey("UserProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("UserProfile");
                 });

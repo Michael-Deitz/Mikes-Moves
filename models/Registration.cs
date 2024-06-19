@@ -16,5 +16,6 @@ public class Registration
     public string LastName { get; set; }
     [DataType(DataType.Url)]
     public string ImageLocation { get; set; }
+    public string PhoneNumber { get; set; }
 
 }

@@ -25,8 +25,6 @@ namespace MikesMoves.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Reservation>().HasKey(r => new { r.UserId, r.TrailerId });
-
             modelBuilder.Entity<Reservation>()
                 .HasOne(r => r.UserProfile)
                 .WithMany(u => u.Reservations)
@@ -57,8 +55,8 @@ namespace MikesMoves.Data
             });
 
             modelBuilder.Entity<IdentityUser>().HasData(new IdentityUser[]
-            {
-                new IdentityUser
+        {
+            new IdentityUser
             {
                 Id = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f",
                 UserName = "Administrator",
@@ -105,6 +103,21 @@ namespace MikesMoves.Data
                 Email = "Eve@Davis.comx",
                 PhoneNumber = "1112223333",
                 PasswordHash = new PasswordHasher<IdentityUser>().HashPassword(null, _configuration["AdminPassword"])
+            },
+
+        });
+
+        modelBuilder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>[]
+        {
+            new IdentityUserRole<string>
+            {
+                RoleId = "c3aaeb97-d2ba-4a53-a521-4eea61e59b35",
+                UserId = "dbc40bc6-0829-4ac5-a3ed-180f5e916a5f"
+            },
+            new IdentityUserRole<string>
+            {
+                RoleId = "c3aaeb97-d2ba-4a53-a521-4eea61e59b35",
+                UserId = "d8d76512-74f1-43bb-b1fd-87d3a8aa36df"
             },
 
         });
@@ -169,16 +182,16 @@ namespace MikesMoves.Data
 
             modelBuilder.Entity<Trailer>().HasData(new Trailer[]
             {
-                new Trailer { Id = 1, Height = 10, Width = 5, Length = 20, Capacity = 1000, Location = "Location A", BasePrice = 50, ImageUrl = "https://example.com/images/trailer1.jpg" },
-                new Trailer { Id = 2, Height = 12, Width = 6, Length = 25, Capacity = 1200, Location = "Location B", BasePrice = 60, ImageUrl = "https://example.com/images/trailer2.jpg" },
-                new Trailer { Id = 3, Height = 8, Width = 4, Length = 15, Capacity = 800, Location = "Location C", BasePrice = 40, ImageUrl = "https://example.com/images/trailer3.jpg" }
+                new Trailer { Id = 1, Type = "Open", Description = "16Ft Trailer", Height = 8.0M, Width = 7.0M, Length = 16.0M, Capacity = 5000.0M, Location = "Location A", BasePrice = 250.00M, PricePerMile = 2.00M , ImageUrl = "https://www.gatormade.com/wp-content/uploads/2016/07/12-30.jpg", UserProfileId = 1 },
+                new Trailer { Id = 2, Type = "Open", Description = "18Ft Trailer", Height = 9.0M, Width = 8.0M, Length = 18.0M, Capacity = 8000.0M, Location = "Location B", BasePrice = 350.00M, PricePerMile = 2.50M , ImageUrl = "https://dealer-cdn.com/IEWsDN/tbftrc/2022_PJ_Trailers_UL182-18FT_V7219_Utility_Trailer_1YPUsybgbcyq.jpg", UserProfileId = 2 },
+                new Trailer { Id = 3, Type = "Open", Description = "20Ft Trailer", Height = 10.0M, Width = 8.5m, Length = 20.0M, Capacity = 10000.0M, Location = "Location C", BasePrice = 400.00M, PricePerMile = 3.00M , ImageUrl = "https://dealer-cdn.com/BRTBhm/5UPgUS/2021_PJ_Trailers_83_in._Tandem_Axle_Channel_Utility_UL_Utility_Trailer_VLqXqK.jpg", UserProfileId = 4 }
             });
 
             modelBuilder.Entity<Item>().HasData(new Item[]
             {
-                new Item { Id = 1, TrailerId = 1, Name = "Item 1", Description = "Description 1", ImageUrl = "https://example.com/images/item1.jpg" },
-                new Item { Id = 2, TrailerId = 2, Name = "Item 2", Description = "Description 2", ImageUrl = "https://example.com/images/item2.jpg" },
-                new Item { Id = 3, TrailerId = 3, Name = "Item 3", Description = "Description 3", ImageUrl = "https://example.com/images/item3.jpg" }
+                new Item { Id = 1, TrailerId = 1, Name = "Polaris Ranger Crew", Description = "Description 1", Height = 6.3M, Width = 5.2M, Length = 12.5M, Weight = 1874.0M, ImageUrl = "https://cdn.dealerspike.com/imglib/v1/800x600/imglib/Assets/Inventory/B9/B9/B9B9E054-562E-492F-8987-EE47D3DCB4A6.jpg", UserProfileId = 3 },
+                new Item { Id = 2, TrailerId = 2, Name = "Honda Accord", Description = "Description 2", Height = 4.8M, Width = 6.1M, Length = 16.1M, Weight = 3307.0M, ImageUrl = "https://cdn.motor1.com/images/mgl/ojB1G4/0:58:1919:1438/1993-honda-accord-se-132-00-miles-pristine-condition.webp", UserProfileId = 5 },
+                new Item { Id = 3, TrailerId = 3, Name = "Pair of Polaris RZR UTVs", Description = "Description 3", Height = 10.0M, Width = 8.0M, Length = 19.0M, Weight = 8000.0M, ImageUrl = "https://blog.ridenow.com/hs-fs/hubfs/2023%20Yamaha%20Wolverine%20RMAX2%20Sport%20UTVs%20in%20baby%20blue%20color%20trailing%20on%20a%20forest%20trail.jpg?width=663&height=497&name=2023%20Yamaha%20Wolverine%20RMAX2%20Sport%20UTVs%20in%20baby%20blue%20color%20trailing%20on%20a%20forest%20trail.jpg", UserProfileId = 1 }
             });
 
             modelBuilder.Entity<Message>().HasData(new Message[]
@@ -190,9 +203,9 @@ namespace MikesMoves.Data
 
             modelBuilder.Entity<Reservation>().HasData(new Reservation[]
             {
-                new Reservation { UserId = 1, TrailerId = 1, DateReserved = DateTime.Now.AddDays(-1) },
-                new Reservation { UserId = 2, TrailerId = 2, DateReserved = DateTime.Now.AddDays(-2) },
-                new Reservation { UserId = 3, TrailerId = 3, DateReserved = DateTime.Now.AddDays(-3) }
+                new Reservation { Id = 1, UserId = 1, TrailerId = 1, DateReserved = DateTime.Now.AddDays(-1) },
+                new Reservation { Id = 2, UserId = 2, TrailerId = 2, DateReserved = DateTime.Now.AddDays(-2) },
+                new Reservation { Id = 3, UserId = 3, TrailerId = 3, DateReserved = DateTime.Now.AddDays(-3) }
             });
         }
     }

@@ -2,10 +2,10 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity;
 
-namespace MikesMoves.Models
+namespace MikesMoves.Models.DTOs
 
 {
-    public class UserProfile
+    public class UserProfileNoNavDTO
     {
         public int Id { get; set; }
         [Required]
@@ -28,10 +28,9 @@ namespace MikesMoves.Models
         public IdentityUser IdentityUser { get; set; }
         [NotMapped]
         public List<string> Roles { get; set; }
-        public ICollection<Reservation> Reservations { get; set; }
-        public ICollection<Message> SentMessages { get; set; }
-        public ICollection<Message> ReceivedMessages { get; set; }
-        public byte[]? ImageBlob { get; set; }
+        public List<Reservation> Reservations { get; set; }
+        public List<Message> SentMessages { get; set; }
+        public List<Message> ReceivedMessages { get; set; }
         public string FullName
         {
             get

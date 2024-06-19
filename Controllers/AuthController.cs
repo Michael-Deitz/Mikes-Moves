@@ -115,6 +115,7 @@ public class AuthController : ControllerBase
         var user = new IdentityUser
         {
             UserName = registration.UserName,
+            PhoneNumber = registration.PhoneNumber,
             Email = registration.Email
         };
 
