@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getProfileWithRolesById, updateUserProfile } from "../../managers/userProfileManager";
-import { Form, FormGroup, Input, Button, Spinner, ButtonGroup, ButtonToolbar } from "reactstrap";
+import { Form, FormGroup, Input, Label, Button, Spinner, ButtonGroup, ButtonToolbar } from "reactstrap";
 import PageContainer from "../PageContainer";
+import DefaultUser from "../../resources/DefaultUser.png";
 
 export default function UpdateUserProfile() {
   const [firstName, setFirstName] = useState("");
@@ -10,6 +11,7 @@ export default function UpdateUserProfile() {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [imageLocation, setImageLocation] = useState('')
   const [userProfile, setUserProfile] = useState(null);
 
   const { id } = useParams();
@@ -24,9 +26,10 @@ export default function UpdateUserProfile() {
         setUserName(profileObj.userName);
         setEmail(profileObj.email);
         setPhoneNumber(profileObj.phoneNumber);
+        setImageLocation(profileObj.imageLocation || DefaultUser);
       });
     }
-  }, [id]);
+  }, [id, DefaultUser]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,6 +40,7 @@ export default function UpdateUserProfile() {
       userName: userName,
       email: email,
       phoneNumber: phoneNumber,
+      imageLocation: imageLocation || DefaultUser,
     };
 
     updateUserProfile(userProfile.id, userProfile).then(() => {
@@ -58,6 +62,28 @@ export default function UpdateUserProfile() {
         Edit Your Profile
       </h4>
       <Form className="w-50 m-auto" style={{ maxWidth: "20rem" }} onSubmit={handleSubmit}>
+      <FormGroup>
+          <Label>Image URL</Label>
+          <Input
+            type="text"
+            value={imageLocation}
+            onChange={(e) => setImageLocation(e.target.value)}
+          />
+            {imageLocation && ( // Render preview if imageLocation is provided
+              <img
+                src={imageLocation}
+                alt="User"
+                style={{ width: "100px", marginTop: "10px" }}
+              />
+            )}
+            {!imageLocation && ( // Render default image if imageLocation is empty
+              <img
+                src={DefaultUser}
+                alt="Default"
+                style={{ width: "100px", marginTop: "10px" }}
+              />
+            )}
+        </FormGroup>
         <FormGroup>
           <Input
             type="text"

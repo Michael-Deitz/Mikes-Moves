@@ -1,5 +1,7 @@
+using MikesMoves.Models.DTOs;
+
 namespace MikesMoves.Models;
-public class Trailer
+public class TrailerUpdateDTO
     {
         public int Id { get; set; }
         public string Type { get; set; }
@@ -11,9 +13,6 @@ public class Trailer
         public string Location { get; set; }
         public decimal BasePrice { get; set; }
         public decimal PricePerMile { get; set; }
-        public ICollection<Item> Items { get; set; }
-        public ICollection<Reservation> Reservations { get; set; }
         public string ImageUrl { get; set; }
         public int UserProfileId { get; set; }
-        public UserProfile UserProfile { get; set; }
     }

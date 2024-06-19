@@ -5,35 +5,97 @@ import Register from "./auth/Register";
 import UserProfileDetails from "./userprofiles/MyUserProfile";
 import UpdateUserProfile from "./userprofiles/UpdateUserProfile";
 import TrailerList from "./trailers/TrailerList";
+import ItemList from "./items/ItemList";
+import TrailerDetails from "./trailers/TrailerDetails";
+import ItemDetails from "./items/ItemDetails";
+import CreateTrailer from "./trailers/TrailerCreate";
+import CreateItem from "./items/ItemCreate";
+import HomePage from "./Homepage";
 
 export default function ApplicationViews({ loggedInUser, setLoggedInUser }) {
   return (
     <Routes>
       <Route>
         <Route
-          path="home"
+          path="/"
           element={
             <AuthorizedRoute  loggedInUser={loggedInUser}>
-              <></>
+              <HomePage/>
             </AuthorizedRoute>
           }
         />
-        <Route
+        <Route 
           path="trailers"
-          element={
-            <AuthorizedRoute  loggedInUser={loggedInUser}>
-              <TrailerList/>
-            </AuthorizedRoute>
-          }
-        />
-        <Route
+        >
+          <Route
+            index
+            element={
+              <AuthorizedRoute  loggedInUser={loggedInUser}>
+                <TrailerList loggedInUser={loggedInUser}/>
+              </AuthorizedRoute>
+            }
+          />
+          <Route
+            path=":id"
+            element={
+              <AuthorizedRoute  loggedInUser={loggedInUser}>
+                <TrailerDetails loggedInUser={loggedInUser}/>
+              </AuthorizedRoute>
+            }
+          />
+          <Route
+            path="create"
+            element={
+              <AuthorizedRoute  loggedInUser={loggedInUser}>
+                <CreateTrailer loggedInUser={loggedInUser}/>
+              </AuthorizedRoute>
+            }
+          />
+          <Route
+            path=":id/edit"
+            element={
+              <AuthorizedRoute  loggedInUser={loggedInUser}>
+                <CreateTrailer loggedInUser={loggedInUser}/>
+              </AuthorizedRoute>
+            }
+          />
+        </Route>
+        <Route 
           path="items"
-          element={
-            <AuthorizedRoute  loggedInUser={loggedInUser}>
-              <></>
-            </AuthorizedRoute>
-          }
-        />
+        >
+          <Route
+            index
+            element={
+              <AuthorizedRoute  loggedInUser={loggedInUser}>
+                <ItemList loggedInUser={loggedInUser}/>
+              </AuthorizedRoute>
+            }
+          />
+          <Route
+            path=":id"
+            element={
+              <AuthorizedRoute  loggedInUser={loggedInUser}>
+                <ItemDetails loggedInUser={loggedInUser}/>
+              </AuthorizedRoute>
+            }
+          />
+          <Route
+            path="create"
+            element={
+              <AuthorizedRoute  loggedInUser={loggedInUser}>
+                <CreateItem loggedInUser={loggedInUser}/>
+              </AuthorizedRoute>
+            }
+          />
+          <Route
+            path=":id/edit"
+            element={
+              <AuthorizedRoute  loggedInUser={loggedInUser}>
+                <CreateItem loggedInUser={loggedInUser}/>
+              </AuthorizedRoute>
+            }
+          />
+        </Route>
         <Route
           path="userprofile"
           element={

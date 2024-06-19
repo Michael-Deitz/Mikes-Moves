@@ -25,8 +25,6 @@ namespace MikesMoves.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Reservation>().HasKey(r => new { r.UserId, r.TrailerId });
-
             modelBuilder.Entity<Reservation>()
                 .HasOne(r => r.UserProfile)
                 .WithMany(u => u.Reservations)
@@ -205,9 +203,9 @@ namespace MikesMoves.Data
 
             modelBuilder.Entity<Reservation>().HasData(new Reservation[]
             {
-                new Reservation { UserId = 1, TrailerId = 1, DateReserved = DateTime.Now.AddDays(-1) },
-                new Reservation { UserId = 2, TrailerId = 2, DateReserved = DateTime.Now.AddDays(-2) },
-                new Reservation { UserId = 3, TrailerId = 3, DateReserved = DateTime.Now.AddDays(-3) }
+                new Reservation { Id = 1, UserId = 1, TrailerId = 1, DateReserved = DateTime.Now.AddDays(-1) },
+                new Reservation { Id = 2, UserId = 2, TrailerId = 2, DateReserved = DateTime.Now.AddDays(-2) },
+                new Reservation { Id = 3, UserId = 3, TrailerId = 3, DateReserved = DateTime.Now.AddDays(-3) }
             });
         }
     }

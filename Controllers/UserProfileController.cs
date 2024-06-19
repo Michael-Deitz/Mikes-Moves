@@ -28,7 +28,7 @@ public class UserProfileController : ControllerBase
     }
 
     [HttpGet("withroles")]
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public IActionResult GetWithRoles()
     {
         return Ok(_dbContext.UserProfiles
@@ -50,7 +50,7 @@ public class UserProfileController : ControllerBase
     }
 
     [HttpGet("withroles/{id}")]
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public IActionResult GetWithRolesById(int id)
     {
         UserProfileForUserProfileDetailsDTO profileDTO = _dbContext.UserProfiles
@@ -167,6 +167,7 @@ public class UserProfileController : ControllerBase
 
         userProfile.FirstName = updatedUserProfile.FirstName;
         userProfile.LastName = updatedUserProfile.LastName;
+        userProfile.ImageLocation = updatedUserProfile.ImageLocation;
 
         IdentityUser user = _dbContext.Users.SingleOrDefault(u => u.Id == userProfile.IdentityUserId);
 

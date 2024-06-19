@@ -17,4 +17,5 @@ public class UserProfileUpdateDTO
     public string Email { get; set; }
     [NotMapped]
     public string PhoneNumber { get; set; }
+    public string ImageLocation { get; set; }
 }

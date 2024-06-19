@@ -19,8 +19,6 @@ return (
             <NavbarToggler onClick={toggleNavbar} />
             <Collapse isOpen={open} navbar>
             <Nav navbar>
-            {loggedInUser.roles.includes("Admin") && (
-                <>
                 <NavItem>
                     <NavLink tag={RRNavLink} to="trailers" >
                         Trailers
@@ -36,8 +34,6 @@ return (
                         My Profile
                     </NavLink>
                 </NavItem> 
-            </>       
-            )}
             </Nav>
             </Collapse>
             <Button

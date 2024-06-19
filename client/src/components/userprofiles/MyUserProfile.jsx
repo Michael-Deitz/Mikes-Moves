@@ -51,7 +51,7 @@ export default function UserProfileDetails({ loggedInUser }) {
       </CardBody>
     </Card>
     <div className="d-flex justify-content-center mt-4 w-">
-    <Button color="primary" style={{float: "center", width:"100px"}} onClick={() => navigate(`/userprofile/${userProfile?.id}/update`)}>Edit</Button>
+    <Button color="primary" style={{float: "center", width:"100px"}} onClick={() => navigate(`/userprofile/${loggedInUser.id}/update`)}>Edit</Button>
     </div>
     </>
   );

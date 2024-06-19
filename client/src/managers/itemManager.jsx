@@ -1,42 +1,42 @@
-const _apiUrl = "/api/trailer";
+const _apiUrl = "/api/item";
 
-export const getAllTrailers = () => {
+export const getAllItems = () => {
     return fetch(_apiUrl).then((res) => res.json());
 }
 
-export const getTrailersById = (id) => {
+export const getItemsById = (id) => {
     return fetch(`${_apiUrl}/${id}`).then((res) => res.json());
 }
 
-export const getAllTrailersWithUserDetails = () => {
+export const getAllItemsWithUserDetails = () => {
     return fetch(_apiUrl + "/withusers").then((res) => res.json())
 }
 
-export const getAllTrailersWithUserDetailsById = (id) => {
+export const getAllItemsWithUserDetailsById = (id) => {
     return fetch(`${_apiUrl}/withusers/${id}`).then((res) => res.json())
 }
 
-export const createTrailer = (trailerCreate) => {
+export const createItem = (item) => {
     return fetch(`${_apiUrl}/create`, {
         method: "POST",
         headers: {
             'Content-Type' : 'application/json'
         },
-        body: JSON.stringify(trailerCreate)
+        body: JSON.stringify(item)
     });
 }
 
-export const updateTrailer = (id, trailer) => {
+export const updateItem = (id, item) => {
     return fetch(`${_apiUrl}/${id}/edit`, {
         method: 'PUT',
         headers: {
             'Content-Type' : 'application/json'
         },
-        body: JSON.stringify(trailer)
+        body: JSON.stringify(item)
     });
 }
 
-export const deleteTrailer = (id) => {
+export const deleteItem = (id) => {
     return fetch(`${_apiUrl}/${id}`, {
         method: 'DELETE',
         headers: {
