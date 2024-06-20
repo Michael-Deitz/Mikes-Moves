@@ -10,11 +10,11 @@ const [open, setOpen] = useState(false);
 const toggleNavbar = () => setOpen(!open);
 
 return (
-    <div  className="d-flex justify-content-center ">
+    <div  className="d-flex justify-content-center " style={{ marginRight: "5rem", marginLeft: "5rem"}}>
     <Navbar color="light" light fixed="true" expand="lg" className="shadow">   
         {loggedInUser ? (
         <>
-            <NavbarToggler onClick={toggleNavbar} />
+            <NavbarToggler onClick={toggleNavbar}  />
             <Collapse isOpen={open} navbar>
             <Nav navbar style={{marginRight: "5rem", marginLeft: "5rem"}}>
                 <NavItem>

@@ -27,7 +27,7 @@ export default function TrailerDetails({ loggedInUser }) {
             const dates = reservations.map(reservation => new Date(reservation.dateReserved));
             setReservedDates(dates);
         });
-    }, [id, reservedDates]);
+    }, [id]);
 
     const currentUser = (userId) => {
         return loggedInUser && userId === loggedInUser.id;
@@ -49,6 +49,11 @@ export default function TrailerDetails({ loggedInUser }) {
     }
 
     const handleReserve = (id) => {
+        if (isDateDisabled(reservationDate)) {
+            toast.error("This date is already reserved. Please choose another date.");
+            return;
+        }
+
         const reservation = {
             UserId: loggedInUser.id,
             TrailerId: id,
@@ -58,8 +63,10 @@ export default function TrailerDetails({ loggedInUser }) {
         ReserveTrailer(reservation)
         .then(() => {
             toast.success("Reservation successful!");
-            // Optionally, refresh the reserved dates list to reflect the new reservation
-            getReservedTrailer(id).then(setReservedDates);
+            getReservedTrailer(id).then(reservations => {
+                const dates = reservations.map(reservation => new Date(reservation.dateReserved));
+                setReservedDates(dates);
+            });
         })
         .catch(() => {
             toast.error("Failed to make reservation.");
@@ -82,7 +89,7 @@ export default function TrailerDetails({ loggedInUser }) {
             </div>
             {trailers.map((t) => (
                 <Card key={t.id} style={{ width: '40rem', marginBottom: '20px' }}>
-                    <img src={t.imageUrl} alt={t.description} style={{height: '20rem'}} className="card-img-top"/>
+                    <img src={t.imageUrl || DefaultTrailer} alt={t.description} style={{ height: '20rem' }} className="card-img-top" />
                     <CardBody>
                         <CardTitle>{t.description}</CardTitle>
                         <div className="row">
@@ -104,25 +111,12 @@ export default function TrailerDetails({ loggedInUser }) {
                                         <Badge>Type :</Badge> {t.type}
                                     </ListGroupItem>
                                     {currentUser(t.userProfileId) && (
-                                        <ButtonToolbar className="gap-2 m-3" >
-                                            <Button style={{width: "5rem"}} color="primary" onClick={() => navigate('edit')}>edit</Button>
-                                            <Button style={{width: "5rem"}} color="danger" onClick={() => handleDeleteModal(t.id)}>delete</Button>
+                                        <ButtonToolbar className="gap-2 m-3">
+                                            <Button style={{ width: "5rem" }} color="primary" onClick={() => navigate('edit')}>edit</Button>
+                                            <Button style={{ width: "5rem" }} color="danger" onClick={() => handleDeleteModal(t.id)}>delete</Button>
                                         </ButtonToolbar>
                                     )}
-                                    {!currentUser(t.userProfileId) && (
-                                        <div>
-                                            <DatePicker
-                                                selected={reservationDate}
-                                                onChange={date => setReservationDate(date)}
-                                                minDate={new Date()} // Minimum selectable date is today
-                                                filterDate={date => !isDateDisabled(date)} // Disable reserved dates
-                                                 isClearable
-                                            />
-                                            <ButtonToolbar className="gap-2 m-3">
-                                                <Button style={{width: "5rem"}} color="primary" onClick={() => handleReserve(t.id)}>Reserve</Button>
-                                            </ButtonToolbar>
-                                        </div>
-                                    )}
+                                    
                                 </ListGroup>
                                 <ConfirmDeleteModal
                                     isOpen={isModalOpen}
@@ -131,6 +125,7 @@ export default function TrailerDetails({ loggedInUser }) {
                                     typeName={"trailer"}
                                 />
                             </div>
+                            
                             <div className="col">
                                 <ListGroup>
                                     <ListGroupItem>
@@ -140,22 +135,38 @@ export default function TrailerDetails({ loggedInUser }) {
                                         <Badge>Price Per Mile:</Badge> ${t.pricePerMile}
                                     </ListGroupItem>
                                     <ListGroupItem>
-                                        <Badge>Owner Name</Badge> {t.userProfiles.fullName}
+                                        <Badge>Owner Name:</Badge> {t.userProfiles.fullName}
                                     </ListGroupItem>
                                     <ListGroupItem>
-                                        <Badge>Phone Number</Badge> {t.userProfiles.phoneNumber}
+                                        <Badge>Phone Number:</Badge> {t.userProfiles.phoneNumber}
                                     </ListGroupItem>
                                     <ListGroupItem>
-                                        <Badge>Email</Badge> {t.userProfiles.email}
+                                        <Badge>Email:</Badge> {t.userProfiles.email}
                                     </ListGroupItem>
                                 </ListGroup>
                             </div>
                         </div>
+                        {!currentUser(t.userProfileId) && (
+                                        <div className="d-flex gap-2 align-items-center" style={{margin: "2rem"}}>
+                                            <DatePicker
+                                                selected={reservationDate}
+                                                onChange={date => setReservationDate(date)}
+                                                minDate={new Date()} // Minimum selectable date is today
+                                                filterDate={date => !isDateDisabled(date)} // Disable reserved dates
+                                                isClearable
+                                            />
+                                            <ButtonToolbar className="d-flex gap-2">
+                                                <Button style={{ width: "5rem" }} color="success" onClick={() => handleReserve(t.id)}>Reserve</Button>
+                                                {/* <Button color="primary">Reserved</Button> */}
+                                            </ButtonToolbar>
+                                        </div>
+                                    )}
                     </CardBody>
                 </Card>
             ))}
         </PageContainer>
     );
 }
+
 
 
