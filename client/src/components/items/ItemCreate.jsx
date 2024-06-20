@@ -6,13 +6,13 @@ import { useEffect, useState } from "react";
 import DefaultItem from "../../resources/DefaultItem.png";
 
 export default function CreateItem({ loggedInUser }) {
-    const [name, setName] = useState("");
-    const [description, setDescription] = useState("");
-    const [height, setHeight] = useState(0);
-    const [width, setWidth] = useState(0);
-    const [length, setLength] = useState(0);
-    const [weight, setWeight] = useState(0);
-    const [imageUrl, setImageUrl] = useState("");
+    const [name, setName] = useState();
+    const [description, setDescription] = useState();
+    const [height, setHeight] = useState();
+    const [width, setWidth] = useState();
+    const [length, setLength] = useState();
+    const [weight, setWeight] = useState();
+    const [imageUrl, setImageUrl] = useState();
     const [updatedItem, setUpdatedItem] = useState({});
 
     const { id } = useParams();
@@ -31,7 +31,7 @@ export default function CreateItem({ loggedInUser }) {
                 setImageUrl(item.imageUrl || DefaultItem);
             });
         }
-    }, [id]);
+    }, [id, DefaultItem]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -61,7 +61,7 @@ export default function CreateItem({ loggedInUser }) {
             ) : (
                 <h4 className="mt-2" style={{ display: 'flex', justifyContent: 'center' }}>Create A Item</h4>
             )}
-            <Card className="w-75 shadow" outline color="light" style={{ maxWidth: "1200px" }}>
+            <Card className="w-25 shadow" outline color="light" style={{ maxWidth: "1200px" }}>
                 <CardBody>
                     <Form className="w-50 m-auto"
                         style={{ maxWidth: "20rem" }}
@@ -98,9 +98,8 @@ export default function CreateItem({ loggedInUser }) {
                                 type="text"
                                 value={name}
                                 placeholder="Name of item or items to be moved"
-                                onChange={(e) => {
-                                    setName(e.target.value);
-                                }}
+                                onChange={(e) => {setName(e.target.value)}}
+                                required
                             />
                         </FormGroup>
                         <FormGroup>
@@ -109,9 +108,8 @@ export default function CreateItem({ loggedInUser }) {
                                 type="text"
                                 value={height}
                                 placeholder="Item height"
-                                onChange={(e) => {
-                                    setHeight(e.target.value);
-                                }}
+                                onChange={(e) => {setHeight(e.target.value)}}
+                                required
                             />
                         </FormGroup>
                         <FormGroup>
@@ -120,9 +118,8 @@ export default function CreateItem({ loggedInUser }) {
                                 type="text"
                                 value={width}
                                 placeholder="Item width"
-                                onChange={(e) => {
-                                    setWidth(e.target.value);
-                                }}
+                                onChange={(e) => {setWidth(e.target.value)}}
+                                required
                             />
                         </FormGroup>
                         <FormGroup>
@@ -131,9 +128,8 @@ export default function CreateItem({ loggedInUser }) {
                                 type="text"
                                 value={length}
                                 placeholder="Item length"
-                                onChange={(e) => {
-                                    setLength(e.target.value);
-                                }}
+                                onChange={(e) => {setLength(e.target.value)}}
+                                required
                             />
                         </FormGroup>
                         <FormGroup>
@@ -142,9 +138,8 @@ export default function CreateItem({ loggedInUser }) {
                                 type="text"
                                 value={weight}
                                 placeholder="Item weight"
-                                onChange={(e) => {
-                                    setWeight(e.target.value);
-                                }}
+                                onChange={(e) => {setWeight(e.target.value)}}
+                                required
                             />
                         </FormGroup>
                         <FormGroup>
@@ -153,9 +148,8 @@ export default function CreateItem({ loggedInUser }) {
                                 type="text"
                                 value={description}
                                 placeholder="Description of item or items"
-                                onChange={(e) => {
-                                    setDescription(e.target.value);
-                                }}
+                                onChange={(e) => {setDescription(e.target.value)}}
+                                required
                             />
                         </FormGroup>
                         <ButtonToolbar className="gap-2">

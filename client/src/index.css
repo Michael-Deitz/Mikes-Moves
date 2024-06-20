@@ -1,15 +1,17 @@
 /* index.css */
 
 /* Light theme (default) */
-/* body {
-  background: url('resources/TrailerPage.jpg') no-repeat center center fixed;
-  background-size: contain;
-  background-color: rgb(142, 141, 141);
+body {
+  background: url('resources/Background2.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: rgb(255, 255, 255);
   color: black;
-} */
+}
 
 .card {
-  background-color: rgb(205, 205, 205);
+  /* background: url('resources/CardBackground.jpg') no-repeat center fixed; */
+  background-size: contain;
+  background-color: rgb(191, 191, 191);
   color: black;
 }
 

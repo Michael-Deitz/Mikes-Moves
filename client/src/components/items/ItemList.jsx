@@ -48,8 +48,8 @@ export default function ItemList({ loggedInUser }) {
                 <div><Button color="success" onClick={() => navigate("/items/create")}>Add Items</Button></div>
             </div>
             {filteredItems.map((i) => (
-                <Card key={i.id} style={{ width: '28rem', marginBottom: '20px' }}>
-                    <img src={i.imageUrl} alt={i.description} className="card-img-top"/>
+                <Card key={i.id} className="shadow " style={{ width: '28rem', marginBottom: '20px', height: "auto" }}>
+                    <img src={i.imageUrl} alt={i.description} className="card-img-top" style={{ height: "20rem"}}/>
                     <CardBody>
                         <CardTitle>{i.name}</CardTitle>
                         <div className="row">

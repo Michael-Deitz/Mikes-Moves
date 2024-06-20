@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { register } from "../../managers/authManager";
 import { Link, useNavigate } from "react-router-dom";
-import { Button, FormFeedback, FormGroup, Input, Label } from "reactstrap";
+import { Button, Card, CardBody, FormFeedback, FormGroup, Input, Label } from "reactstrap";
 import DefaultUser from "../../resources/DefaultUser.png";
+import PageContainer from "../PageContainer";
 
 export default function Register({ setLoggedInUser }) {
   const [firstName, setFirstName] = useState("");
@@ -55,111 +56,127 @@ export default function Register({ setLoggedInUser }) {
   };
 
   return (
-    <div className="container" style={{ maxWidth: "500px" }}>
-      <h3>Sign Up</h3>
-      <form onSubmit={handleSubmit}>
-        <FormGroup>
-          <Label>First Name</Label>
-          <Input
-            type="text"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label>Last Name</Label>
-          <Input
-            type="text"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label>Email</Label>
-          <Input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label>User Name</Label>
-          <Input
-            type="text"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label>Phone Number</Label>
-          <Input
-            type="tel" // Use type="tel" for phone number input
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label>Image URL</Label>
-          <Input
-            type="text"
-            value={imageLocation}
-            onChange={(e) => setImageLocation(e.target.value)}
-          />
-          {imageLocation && ( // Render preview if imageLocation is provided
-            <img
-              src={imageLocation}
-              alt="User"
-              style={{ width: "100px", marginTop: "10px" }}
-            />
-          )}
-          {!imageLocation && ( // Render default image if imageLocation is empty
-            <img
-              src={DefaultUser}
-              alt="Default"
-              style={{ width: "100px", marginTop: "10px" }}
-            />
-          )}
-        </FormGroup>
-        <FormGroup>
-          <Label>Password</Label>
-          <Input
-            invalid={passwordMismatch}
-            type="password"
-            value={password}
-            onChange={(e) => {
-              setPasswordMismatch(false);
-              setPassword(e.target.value);
-            }}
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label>Confirm Password</Label>
-          <Input
-            invalid={passwordMismatch}
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => {
-              setPasswordMismatch(false);
-              setConfirmPassword(e.target.value);
-            }}
-          />
-          <FormFeedback>Passwords do not match!</FormFeedback>
-        </FormGroup>
-        {errors.length > 0 && (
-          <div className="alert alert-danger">
-            {errors.map((e, i) => (
-              <p key={i}>{e}</p>
-            ))}
-          </div>
-        )}
-        <Button color="primary" type="submit" disabled={passwordMismatch}>
-          Register
-        </Button>
-      </form>
-      <p>
-        Already signed up? Log in <Link to="/login">here</Link>
-      </p>
-    </div>
+    <PageContainer>
+      <div className="container" style={{ maxWidth: "500px" }}>
+        <h3>Sign Up</h3>
+        <form onSubmit={handleSubmit}>
+          <Card>
+            <CardBody>
+              <FormGroup>
+                <Label>First Name</Label>
+                <Input
+                  type="text"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label>Last Name</Label>
+                <Input
+                  type="text"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label>Email</Label>
+                <Input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label>User Name</Label>
+                <Input
+                  type="text"
+                  value={userName}
+                  onChange={(e) => setUserName(e.target.value)}
+                  required
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label>Phone Number</Label>
+                <Input
+                  type="tel" // Use type="tel" for phone number input
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  required
+                  maxLength="10"
+                  minLength="10"
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label>Image URL</Label>
+                <Input
+                  type="text"
+                  value={imageLocation}
+                  onChange={(e) => setImageLocation(e.target.value)}
+                />
+                {imageLocation && ( // Render preview if imageLocation is provided
+                  <img
+                    src={imageLocation}
+                    alt="User"
+                    style={{ width: "100px", marginTop: "10px" }}
+                  />
+                )}
+                {!imageLocation && ( // Render default image if imageLocation is empty
+                  <img
+                    src={DefaultUser}
+                    alt="Default"
+                    style={{ width: "100px", marginTop: "10px" }}
+                  />
+                )}
+              </FormGroup>
+              <FormGroup>
+                <Label>Password</Label>
+                <Input
+                  invalid={passwordMismatch}
+                  type="password"
+                  value={password}
+                  onChange={(e) => {
+                    setPasswordMismatch(false);
+                    setPassword(e.target.value);
+                  
+                  }}
+                  required
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label>Confirm Password</Label>
+                <Input
+                  invalid={passwordMismatch}
+                  type="password"
+                  value={confirmPassword}
+                  onChange={(e) => {
+                    setPasswordMismatch(false);
+                    setConfirmPassword(e.target.value);
+                  }}
+                  required
+                />
+                <FormFeedback>Passwords do not match!</FormFeedback>
+              </FormGroup>
+              {errors.length > 0 && (
+                <div className="alert alert-danger">
+                  {errors.map((e, i) => (
+                    <p key={i}>{e}</p>
+                  ))}
+                </div>
+              )}
+              <Button color="primary" type="submit" disabled={passwordMismatch}>
+                Register
+              </Button>
+            </CardBody>
+          </Card>
+        </form>
+        <p class="text-light">
+          Already signed up? Log in <Link to="/login">here</Link>
+        </p>
+      </div>
+    </PageContainer>
   );
 }
 

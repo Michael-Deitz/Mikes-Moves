@@ -90,6 +90,7 @@ export default function UpdateUserProfile() {
             value={firstName}
             placeholder="First Name"
             onChange={(e) => setFirstName(e.target.value)}
+            required
           />
         </FormGroup>
         <FormGroup>
@@ -98,6 +99,7 @@ export default function UpdateUserProfile() {
             value={lastName}
             placeholder="Last Name"
             onChange={(e) => setLastName(e.target.value)}
+            required
           />
         </FormGroup>
         <FormGroup>
@@ -106,6 +108,7 @@ export default function UpdateUserProfile() {
             value={userName}
             placeholder="User Name"
             onChange={(e) => setUserName(e.target.value)}
+            required
           />
         </FormGroup>
         <FormGroup>
@@ -114,6 +117,7 @@ export default function UpdateUserProfile() {
             value={email}
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </FormGroup>
         <FormGroup>
@@ -122,6 +126,9 @@ export default function UpdateUserProfile() {
             value={phoneNumber}
             placeholder="Phone Number"
             onChange={(e) => setPhoneNumber(e.target.value)}
+            required
+            maxLength="10"
+            minLength="10"
           />
         </FormGroup>
         <ButtonToolbar className="gap-2 d-flex justify-content-center" >

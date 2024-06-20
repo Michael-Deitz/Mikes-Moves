@@ -48,8 +48,8 @@ export default function TrailerList({ loggedInUser }) {
                 <div><Button color="success" onClick={() => navigate("/trailers/create")}>Add Trailer</Button></div>
             </div>
             {filteredTrailers.map((t) => (
-                <Card key={t.id} className="shadow-sm" style={{ width: '28rem', marginBottom: '20px' }}>
-                    <img src={t.imageUrl || DefaultTrailer} alt={t.description} className="card-img-top"/>
+                <Card key={t.id} className="shadow " style={{ width: '28rem', marginBottom: '20px' }}>
+                    <img src={t.imageUrl || DefaultTrailer} alt={t.description} className="card-img-top" style={{ height: "16rem"}}/>
                     <CardBody>
                         <CardTitle>{t.description}</CardTitle>
                         <div className="row">

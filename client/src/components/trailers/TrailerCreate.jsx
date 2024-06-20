@@ -6,16 +6,16 @@ import { useEffect, useState } from "react";
 import DefaultTrailer from "../../resources/DefaultTrailer.jpg";
 
 export default function CreateTrailer({ loggedInUser }) {
-    const [type, setType] = useState("");
-    const [description, setDescription] = useState("");
-    const [height, setHeight] = useState(0);
-    const [width, setWidth] = useState(0);
-    const [length, setLength] = useState(0);
-    const [capacity, setCapacity] = useState(0);
-    const [basePrice, setBasePrice] = useState(0);
-    const [pricePerMile, setPricePerMile] = useState(0);
-    const [location, setLocation] = useState("");
-    const [imageUrl, setImageUrl] = useState("");
+    const [type, setType] = useState();
+    const [description, setDescription] = useState();
+    const [height, setHeight] = useState();
+    const [width, setWidth] = useState();
+    const [length, setLength] = useState();
+    const [capacity, setCapacity] = useState();
+    const [basePrice, setBasePrice] = useState();
+    const [pricePerMile, setPricePerMile] = useState();
+    const [location, setLocation] = useState();
+    const [imageUrl, setImageUrl] = useState();
     const [updateTrailerItem, setUpdateTrailerItem] = useState({});
 
     const { id } = useParams();
@@ -70,7 +70,7 @@ export default function CreateTrailer({ loggedInUser }) {
             ) : (
                 <h4 className="mt-2" style={{ display: 'flex', justifyContent: 'center' }}>Create A Trailer</h4>
             )}
-            <Card className="w-75 shadow" outline color="light" style={{ maxWidth: "1200px" }}>
+            <Card className="w-25 shadow" outline color="light" style={{ maxWidth: "1200px" }}>
                 <CardBody>
                     <Form className="w-50 m-auto"
                         style={{ maxWidth: "20rem" }}
@@ -106,6 +106,7 @@ export default function CreateTrailer({ loggedInUser }) {
                                 value={description}
                                 placeholder="Name of the trailer"
                                 onChange={(e) => setDescription(e.target.value)}
+                                required
                             />
                         </FormGroup>
                         <FormGroup>
@@ -113,8 +114,9 @@ export default function CreateTrailer({ loggedInUser }) {
                             <Input
                                 type="text"
                                 value={type}
-                                placeholder="Name of the trailer"
+                                placeholder="Type of trailer"
                                 onChange={(e) => setType(e.target.value)}
+                                required
                             />
                         </FormGroup>
                         <FormGroup>
@@ -124,6 +126,7 @@ export default function CreateTrailer({ loggedInUser }) {
                                 value={height}
                                 placeholder="Trailer height"
                                 onChange={(e) => setHeight(e.target.value)}
+                                required
                             />
                         </FormGroup>
                         <FormGroup>
@@ -133,6 +136,7 @@ export default function CreateTrailer({ loggedInUser }) {
                                 value={width}
                                 placeholder="Trailer width"
                                 onChange={(e) => setWidth(e.target.value)}
+                                required
                             />
                         </FormGroup>
                         <FormGroup>
@@ -142,6 +146,7 @@ export default function CreateTrailer({ loggedInUser }) {
                                 value={length}
                                 placeholder="Trailer length"
                                 onChange={(e) => setLength(e.target.value)}
+                                required
                             />
                         </FormGroup>
                         <FormGroup>
@@ -151,15 +156,18 @@ export default function CreateTrailer({ loggedInUser }) {
                                 value={capacity}
                                 placeholder="Trailer weight"
                                 onChange={(e) => setCapacity(e.target.value)}
+                                required
                             />
                         </FormGroup>
                         <FormGroup>
                             <Label>Location </Label>
+                            
                             <Input
                                 type="text"
                                 value={location}
-                                placeholder="Trailer type"
+                                placeholder="Location"
                                 onChange={(e) => setLocation(e.target.value)}
+                                required
                             />
                         </FormGroup>
                         <FormGroup>
@@ -169,6 +177,7 @@ export default function CreateTrailer({ loggedInUser }) {
                                 value={basePrice}
                                 placeholder="Name of the trailer"
                                 onChange={(e) => setBasePrice(e.target.value)}
+                                required
                             />
                         </FormGroup>
                         <FormGroup>
@@ -178,6 +187,7 @@ export default function CreateTrailer({ loggedInUser }) {
                                 value={pricePerMile}
                                 placeholder="Name of the trailer"
                                 onChange={(e) => setPricePerMile(e.target.value)}
+                                required
                             />
                         </FormGroup>
                         <ButtonToolbar className="gap-2">
