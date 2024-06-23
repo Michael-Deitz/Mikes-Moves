@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using MikesMoves.Models.DTOs;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace MikesMoves.Controllers;
 
@@ -20,7 +21,7 @@ public class ReserveController : ControllerBase
         _dbContext = context;
     }
 
-[HttpGet("{trailerId}")]
+[HttpGet("trailer/{trailerId}")]
 [Authorize]
 public IActionResult ReservedTrailers(int trailerId)
 {
@@ -34,6 +35,21 @@ public IActionResult ReservedTrailers(int trailerId)
             DateReserved = r.DateReserved,
             
         }));
+}
+
+[HttpGet("user/{userId}")]
+[Authorize]
+public IActionResult ReservedTrailersByUserId(int userId)
+{
+    return Ok(_dbContext.Reservations
+    .Where(r => r.UserId == userId)
+    .Select(r => new ReserveTrailerDTO
+    {
+        Id = r.Id,
+        TrailerId = r.TrailerId,
+        UserId = r.UserId,
+        DateReserved = r.DateReserved
+    }));
 }
 
 [HttpPost]
@@ -68,7 +84,22 @@ public IActionResult ReserveTrailer(ReserveTrailerDTO reserveATrailer)
  
 }
 
+[HttpDelete("{id}")]
+[Authorize]
+public IActionResult DeleteReservation(int id)
+{
+    Reservation reservation = _dbContext.Reservations.SingleOrDefault(r => r.Id == id);
 
+    _dbContext.Reservations.Remove(reservation);
+    _dbContext.SaveChanges();
+
+    if(reservation == null)
+    {
+        return NotFound();
+    }
+
+    return NoContent();
+}
 
 
 

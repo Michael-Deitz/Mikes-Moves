@@ -11,5 +11,11 @@ export const ReserveTrailer = (reservation) => {
 }
 
 export const getReservedTrailer = (trailerId) => {
-    return fetch(`${_apiUrl}/${trailerId}`).then((res) => res.json())
+    return fetch(`${_apiUrl}/trailer/${trailerId}`).then((res) => res.json())
+}
+
+export const deleteReservation = (id) => {
+    return fetch(`${_apiUrl}/reservations/${id}`, {
+        method: "DELETE"
+    })
 }

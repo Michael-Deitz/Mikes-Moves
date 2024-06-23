@@ -175,7 +175,7 @@ export default function CreateTrailer({ loggedInUser }) {
                             <Input
                                 type="text"
                                 value={basePrice}
-                                placeholder="Name of the trailer"
+                                placeholder="Base Price"
                                 onChange={(e) => setBasePrice(e.target.value)}
                                 required
                             />
@@ -185,7 +185,7 @@ export default function CreateTrailer({ loggedInUser }) {
                             <Input
                                 type="text"
                                 value={pricePerMile}
-                                placeholder="Name of the trailer"
+                                placeholder="Price Per Miles"
                                 onChange={(e) => setPricePerMile(e.target.value)}
                                 required
                             />

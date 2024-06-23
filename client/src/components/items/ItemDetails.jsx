@@ -64,8 +64,8 @@ export default function ItemDetails({ loggedInUser}) {
                                     </ListGroupItem>
                                     {currentUser(i.userProfileId) && (
                                         <ButtonToolbar className="gap-2 m-3" >
-                                        <Button className="" style={{width: "5rem"}} color="primary" onClick={() => navigate('edit')}>edit</Button>
-                                        <Button className="" style={{width: "5rem"}} color="danger" onClick={() => handleDeleteModal(i.id)}>delete</Button>
+                                        <Button className="" style={{width: "5rem"}} color="primary" onClick={() => navigate('edit')}>Edit</Button>
+                                        <Button className="" style={{width: "5rem"}} color="danger" onClick={() => handleDeleteModal(i.id)}>Delete</Button>
                                         </ButtonToolbar>
                                     )} 
                                 </ListGroup>
